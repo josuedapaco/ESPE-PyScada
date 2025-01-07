@@ -1,0 +1,90 @@
+#!/bin/bash
+
+### BEGIN INIT INFO
+# Provides:			 gunicorn_django
+# Required-Start:	 $all
+# Required-Stop:	 $all
+# Default-Start:	 2 3 4 5
+# Default-Stop:		 0 1 6
+# Short-Description: starts the pyscada gunicorn server
+# Description:		 starts pyscada gunicorn using start-stop-daemon
+### END INIT INFO
+
+# sample configfile for /etc/default/gunicorn_django
+# APP_NAME='PyScadaServer'
+# DJANGO_DIR='/var/www/pyscada/PyScadaServer'
+# NUMBER_OF_WORKERS=10 
+# RUN_AS='pyscada'
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+PID_FILE=/tmp/gunicorn.pid
+SOCKET_FILE=/tmp/gunicorn.sock
+
+if [ -f /etc/default/gunicorn_django ] ; then
+	. /etc/default/gunicorn_django
+else
+	# use default values
+	APP_NAME='PyScadaServer'
+	DJANGO_DIR=/var/www/pyscada/PyScadaServer/
+	NUMBER_OF_WORKERS=10 
+	RUN_AS='pyscada'
+fi
+
+
+
+start () {
+
+	if [ -e $PID_FILE ]
+	then
+		PID=$(cat $PID_FILE)
+		if ps -p $PID > /dev/null
+		then
+			echo "gunicorn service is already running ($PID)"
+			exit 0
+		fi
+	fi
+
+	echo "Spawning $APP_NAME"
+	# Create the run directory if it doesn't exist
+	export DJANGO_SETTINGS_MODULE=$APP_NAME.settings
+	export PYTHONPATH=${data[1]}:$PYTHONPATH
+	# Start your Django Unicorn
+	# Programs meant to be run under supervisor should not daemonize themselves (do not use --daemon)
+	start-stop-daemon --start --quiet -c $RUN_AS -d $DJANGO_DIR --pidfile $PID_FILE --exec /usr/local/bin/gunicorn -- $APP_NAME.wsgi:application -n $APP_NAME -w $NUMBER_OF_WORKERS -u $RUN_AS -b unix:$SOCKET_FILE -p $PID_FILE -D
+
+	return
+}
+
+stop () {
+	if [ -e $PID_FILE ]
+	then
+		kill -TERM $(<"$PID_FILE")
+		echo "stopped service"
+	else
+		echo "service not running"
+	fi
+}
+
+case "$1" in
+  start)
+		echo "Starting"
+		start
+		;;
+  stop)
+		echo "Stopping"
+		stop
+		;;
+  restart)
+		echo "Restarting"
+		stop
+		sleep 1
+		start
+		;;
+  *)
+		N=/etc/init.d/$NAME
+		echo "Usage: $N {start|stop|restart} " >&2
+		exit 1
+		;;
+esac
+
+exit 0

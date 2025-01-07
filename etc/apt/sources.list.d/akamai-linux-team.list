@@ -1,0 +1,1 @@
+deb [arch=amd64 signed-by=/usr/share/keyrings/akamai-linux-team.gpg] http://download.opensuse.org/repositories/home:/akamai-linux-team/Debian_12/ /

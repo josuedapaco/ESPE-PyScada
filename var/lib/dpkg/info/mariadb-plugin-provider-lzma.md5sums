@@ -1,0 +1,4 @@
+e2e8e8e7fdf5d8872b50bb1436d06fc4  usr/lib/mysql/plugin/provider_lzma.so
+41830f943cdbd76c972654b942853d1b  usr/share/doc/mariadb-plugin-provider-lzma/changelog.Debian.gz
+ea51e0f543151819f399b65441e80ffb  usr/share/doc/mariadb-plugin-provider-lzma/copyright
+c76c99473b9dbbdc767d0a543a668ace  usr/share/lintian/overrides/mariadb-plugin-provider-lzma

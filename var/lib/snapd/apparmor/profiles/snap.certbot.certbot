@@ -1,0 +1,36 @@
+
+#include <tunables/global>
+
+#include if exists "/etc/apparmor.d/tunables/home.d"
+
+# This is a snap name without the instance key
+@{SNAP_NAME}="certbot"
+# This is a snap name with instance key
+@{SNAP_INSTANCE_NAME}="certbot"
+@{SNAP_INSTANCE_DESKTOP}="certbot"
+@{SNAP_COMMAND_NAME}="certbot"
+@{SNAP_REVISION}="4193"
+@{PROFILE_DBUS}="snap_2ecertbot_2ecertbot"
+@{INSTALL_DIR}="/{,var/lib/snapd/}snap"
+
+profile "snap.certbot.certbot" flags=(attach_disconnected,mediate_deleted,complain) {
+  # set file rules so that exec() inherits our profile unless there is
+  # already a profile for it (eg, snap-confine)
+  / rwkl,
+  /** rwlkm,
+  /** pix,
+
+  capability,
+  change_profile unsafe /**,
+  dbus,
+  network,
+  mount,
+  remount,
+  umount,
+  pivot_root,
+  ptrace,
+  signal,
+  unix,
+
+
+}

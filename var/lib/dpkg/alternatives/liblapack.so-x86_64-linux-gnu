@@ -1,0 +1,12 @@
+auto
+/usr/lib/x86_64-linux-gnu/liblapack.so
+lapack.pc-x86_64-linux-gnu
+/usr/lib/x86_64-linux-gnu/pkgconfig/lapack.pc
+liblapack.a-x86_64-linux-gnu
+/usr/lib/x86_64-linux-gnu/liblapack.a
+
+/usr/lib/x86_64-linux-gnu/atlas/liblapack.so
+35
+/usr/lib/x86_64-linux-gnu/pkgconfig/lapack-atlas.pc
+/usr/lib/x86_64-linux-gnu/atlas/liblapack.a
+

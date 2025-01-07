@@ -1,0 +1,7 @@
+NAME="Ubuntu Core"
+VERSION="24"
+ID=ubuntu-core
+PRETTY_NAME="Ubuntu Core 24"
+VERSION_ID="24"
+HOME_URL="https://snapcraft.io/"
+BUG_REPORT_URL="https://bugs.launchpad.net/snappy/"

@@ -1,0 +1,4 @@
+/etc/letsencrypt/options-ssl-nginx.conf
+/etc/nginx/sites-enabled/pyscada.conf
+/etc/nginx/mime.types
+/etc/nginx/nginx.conf

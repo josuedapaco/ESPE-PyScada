@@ -1,0 +1,7 @@
+I:4390173
+E:ID_MM_CANDIDATE=1
+E:ID_NET_DRIVER=wireguard
+E:SYSTEMD_ALIAS=/sys/subsystem/net/devices/wg0
+G:systemd
+Q:systemd
+V:1

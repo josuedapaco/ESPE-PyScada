@@ -1,0 +1,149 @@
+snapcraft-version: 8.4.4
+snapcraft-started-at: '2024-11-14T17:29:11.943314Z'
+snapcraft-os-release-id: ubuntu
+snapcraft-os-release-version-id: '24.04'
+name: certbot
+version: 3.0.1
+summary: Automatically configure HTTPS using Let's Encrypt
+description: |
+  The objective of Certbot, Let's Encrypt, and the ACME (Automated
+  Certificate Management Environment) protocol is to make it possible
+  to set up an HTTPS server and have it automatically obtain a
+  browser-trusted certificate, without any human intervention. This is
+  accomplished by running a certificate management agent on the web
+  server.
+
+  This agent is used to:
+    - Automatically prove to the Let's Encrypt CA that you control the website
+    - Obtain a browser-trusted certificate and set it up on your web server
+    - Keep track of when your certificate is going to expire, and renew it
+    - Help you revoke the certificate if that ever becomes necessary.
+base: core24
+grade: stable
+confinement: classic
+apps:
+  certbot:
+    command: bin/python3 -s $SNAP/bin/certbot
+    environment:
+      PATH: $SNAP/bin:$SNAP/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+      AUGEAS_LENS_LIB: $SNAP/usr/share/augeas/lenses/dist
+      CERTBOT_SNAPPED: 'True'
+  renew:
+    command: bin/python3 -s $SNAP/bin/certbot -q renew
+    timer: 00:00~24:00/2
+    daemon: oneshot
+    environment:
+      PATH: $SNAP/bin:$SNAP/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+      AUGEAS_LENS_LIB: $SNAP/usr/share/augeas/lenses/dist
+      CERTBOT_SNAPPED: 'True'
+parts:
+  certbot:
+    plugin: python
+    source: .
+    python-packages:
+    - git+https://github.com/certbot/python-augeas.git@certbot-patched
+    - ./acme
+    - ./certbot
+    - ./certbot-apache
+    - ./certbot-nginx
+    stage:
+    - -usr/lib/python3.12/sitecustomize.py
+    - -pyvenv.cfg
+    stage-packages:
+    - augeas-lenses=1.14.1-1build2
+    - libaugeas0=1.14.1-1build2
+    - libc-dev-bin=2.39-0ubuntu8.3
+    - libc6-dev=2.39-0ubuntu8.3
+    - libcrypt-dev=1:4.4.36-4build1
+    - libexpat1-dev=2.6.1-2ubuntu0.1
+    - libicu74=74.2-1ubuntu3.1
+    - libpython3-stdlib=3.12.3-0ubuntu2
+    - libpython3.12-dev=3.12.3-1ubuntu0.2
+    - libpython3.12-minimal=3.12.3-1ubuntu0.2
+    - libpython3.12-stdlib=3.12.3-1ubuntu0.2
+    - libpython3.12t64=3.12.3-1ubuntu0.2
+    - libxml2=2.9.14+dfsg-1.3ubuntu3
+    - linux-libc-dev=6.8.0-48.48
+    - python3-minimal=3.12.3-0ubuntu2
+    - python3-pip-whl=24.0+dfsg-1ubuntu1.1
+    - python3-pip=24.0+dfsg-1ubuntu1.1
+    - python3-pkg-resources=68.1.2-2ubuntu1.1
+    - python3-setuptools-whl=68.1.2-2ubuntu1.1
+    - python3-setuptools=68.1.2-2ubuntu1.1
+    - python3-venv=3.12.3-0ubuntu2
+    - python3-wheel=0.42.0-2
+    - python3.12-minimal=3.12.3-1ubuntu0.2
+    - python3.12-venv=3.12.3-1ubuntu0.2
+    - rpcsvc-proto=1.4.2-0ubuntu7
+    - zlib1g-dev=1:1.3.dfsg-3.1ubuntu2.1
+    build-packages:
+    - gcc
+    - git
+    - libaugeas-dev
+    - build-essential
+    - libssl-dev
+    - libffi-dev
+    - python3-dev
+    - cargo
+    - pkg-config
+    build-environment:
+    - CARGO_NET_GIT_FETCH_WITH_CLI: 'true'
+    - PARTS_PYTHON_VENV_ARGS: --upgrade
+    - PIP_CONSTRAINT: $CRAFT_PART_SRC/snap-constraints.txt
+    override-build: |
+      python3 -m venv "${CRAFT_PART_INSTALL}"
+      "${CRAFT_PART_INSTALL}/bin/python3" "${CRAFT_PART_SRC}/tools/pipstrap.py"
+      craftctl default
+    override-pull: |
+      craftctl default
+      grep -v python-augeas "${CRAFT_PART_SRC}/tools/requirements.txt" >> "${CRAFT_PART_SRC}/snap-constraints.txt"
+      craftctl set version=$(grep -oP "__version__ = '\K.*(?=')" "${CRAFT_PART_SRC}/certbot/certbot/__init__.py")
+    build-attributes:
+    - enable-patchelf
+    prime: []
+  shared-metadata:
+    plugin: dump
+    source: .
+    override-pull: |
+      craftctl default
+      mkdir -p certbot-metadata
+      grep -oP "__version__ = '\K.*(?=')" $CRAFT_PART_SRC/certbot/certbot/__init__.py > certbot-metadata/certbot-version.txt
+    stage:
+    - certbot-metadata/certbot-version.txt
+    stage-packages: []
+    prime: []
+    build-packages: []
+architectures:
+- amd64
+image-info:
+  build-request-id: lp-93677778
+  build-request-timestamp: '2024-11-14T17:26:12Z'
+  build_url: https://launchpad.net/~certbot-eff/certbot-eff-craft-remote-build/+snap/snapcraft-certbot-9f57ccf85eed2b6bf72c375cb8865775/+build/2656310
+build-packages: []
+build-snaps: []
+primed-stage-packages:
+- augeas-lenses=1.14.1-1build2
+- libaugeas0=1.14.1-1build2
+- libc-dev-bin=2.39-0ubuntu8.3
+- libc6-dev=2.39-0ubuntu8.3
+- libcrypt-dev=1:4.4.36-4build1
+- libexpat1-dev=2.6.1-2ubuntu0.1
+- libicu74=74.2-1ubuntu3.1
+- libpython3-stdlib=3.12.3-0ubuntu2
+- libpython3.12-dev=3.12.3-1ubuntu0.2
+- libpython3.12-minimal=3.12.3-1ubuntu0.2
+- libpython3.12-stdlib=3.12.3-1ubuntu0.2
+- libpython3.12t64=3.12.3-1ubuntu0.2
+- libxml2=2.9.14+dfsg-1.3ubuntu3
+- linux-libc-dev=6.8.0-48.48
+- python3-minimal=3.12.3-0ubuntu2
+- python3-pip-whl=24.0+dfsg-1ubuntu1.1
+- python3-pip=24.0+dfsg-1ubuntu1.1
+- python3-pkg-resources=68.1.2-2ubuntu1.1
+- python3-setuptools-whl=68.1.2-2ubuntu1.1
+- python3-setuptools=68.1.2-2ubuntu1.1
+- python3-wheel=0.42.0-2
+- python3.12-minimal=3.12.3-1ubuntu0.2
+- python3.12-venv=3.12.3-1ubuntu0.2
+- rpcsvc-proto=1.4.2-0ubuntu7
+- zlib1g-dev=1:1.3.dfsg-3.1ubuntu2.1

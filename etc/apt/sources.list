@@ -1,0 +1,9 @@
+deb http://mirrors.linode.com/debian bookworm main
+deb-src http://mirrors.linode.com/debian bookworm main
+
+deb http://mirrors.linode.com/debian-security bookworm-security/updates main
+deb-src http://mirrors.linode.com/debian-security bookworm-security/updates main
+
+# bookworm-updates, previously known as 'volatile'
+deb http://mirrors.linode.com/debian bookworm-updates main
+deb-src http://mirrors.linode.com/debian bookworm-updates main

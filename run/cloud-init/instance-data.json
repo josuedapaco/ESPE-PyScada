@@ -1,0 +1,81 @@
+{
+ "base64_encoded_keys": [],
+ "ds": {
+  "_doc": "EXPERIMENTAL: The structure and format of content scoped under the 'ds' key may change in subsequent releases of cloud-init.",
+  "meta_data": {
+   "account_euuid": "56B9F835-2884-4EC6-AE9ABF4A96A43105",
+   "backups": {
+    "enabled": false,
+    "status": null
+   },
+   "host_uuid": "bc40b97fe3e8fcd0f3ab1a1588d546bbb90283cf",
+   "id": 68846220,
+   "image": {
+    "id": "linode/debian12",
+    "label": "Debian 12"
+   },
+   "instance-id": 68846220,
+   "label": "pyscada_espe",
+   "region": "us-east",
+   "specs": {
+    "disk": 25600,
+    "gpus": 0,
+    "memory": 1024,
+    "transfer": 1000,
+    "vcpus": 1
+   },
+   "tags": [],
+   "type": "g6-nanode-1"
+  }
+ },
+ "merged_cfg": "redacted for non-root user",
+ "sensitive_keys": [
+  "merged_cfg"
+ ],
+ "sys_info": {
+  "dist": [
+   "debian",
+   "12",
+   "bookworm"
+  ],
+  "platform": "Linux-6.1.0-28-amd64-x86_64-with-glibc2.36",
+  "python": "3.11.2",
+  "release": "6.1.0-28-amd64",
+  "system": "Linux",
+  "uname": [
+   "Linux",
+   "localhost",
+   "6.1.0-28-amd64",
+   "#1 SMP PREEMPT_DYNAMIC Debian 6.1.119-1 (2024-11-22)",
+   "x86_64",
+   ""
+  ],
+  "variant": "debian"
+ },
+ "v1": {
+  "_beta_keys": [
+   "subplatform"
+  ],
+  "availability-zone": null,
+  "availability_zone": null,
+  "cloud-name": "akamai",
+  "cloud_id": "akamai",
+  "cloud_name": "akamai",
+  "distro": "debian",
+  "distro_release": "bookworm",
+  "distro_version": "12",
+  "instance-id": "68846220",
+  "instance_id": "68846220",
+  "kernel_release": "6.1.0-28-amd64",
+  "local-hostname": "localhost",
+  "local_hostname": "localhost",
+  "machine": "x86_64",
+  "platform": "akamai",
+  "public_ssh_keys": [],
+  "python_version": "3.11.2",
+  "region": "us-east",
+  "subplatform": "unknown",
+  "system_platform": "Linux-6.1.0-28-amd64-x86_64-with-glibc2.36",
+  "variant": "debian"
+ }
+}

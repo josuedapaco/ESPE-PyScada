@@ -1,0 +1,11 @@
+Package: cloud-init
+Pin: release o=Debian
+Pin-Priority: -1
+
+Package: cloud-init
+Pin: release o=obs://build.opensuse.org/home:akamai-linux-team/Debian_12
+Pin-Priority: 1001
+
+Package: *
+Pin: release o=obs://build.opensuse.org/home:akamai-linux-team/Debian_12
+Pin-Priority: -1

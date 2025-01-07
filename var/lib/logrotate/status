@@ -1,0 +1,16 @@
+logrotate state -- version 2
+"/var/log/nginx/error.log" 2025-1-7-0:0:15
+"/var/log/dpkg.log" 2025-1-1-0:0:20
+"/var/log/mysql/*.log" 2024-12-22-0:0:0
+"/var/log/apt/term.log" 2025-1-1-0:0:20
+"/var/log/apt/history.log" 2025-1-1-0:0:20
+"/var/log/alternatives.log" 2025-1-1-0:0:20
+"/var/lib/mysql/mysqld.log" 2024-12-22-0:0:0
+"/var/log/redis/redis-server.log" 2025-1-5-0:0:0
+"/var/log/wtmp" 2024-12-22-0:0:0
+"/var/log/chrony/*.log" 2024-12-22-0:0:0
+"/var/log/letsencrypt/letsencrypt.log" 2025-1-5-0:0:0
+"/var/log/btmp" 2025-1-1-0:0:20
+"/var/log/nginx/error copy.log" 2025-1-2-0:0:19
+"/var/log/nginx/access.log" 2025-1-7-0:0:15
+"/var/lib/mysql/mariadb.log" 2024-12-22-0:0:0

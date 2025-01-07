@@ -1,0 +1,8 @@
+37379cbbde298585c733db9ed376a2c8  usr/bin/mariadb
+a32f8fd88115477462d9995a9558e6fb  usr/bin/mariadb-check
+005b8394dda646d0a23ad3e05e5d5ab4  usr/bin/my_print_defaults
+ca04547ad3caaf4fb1f247bdacb32743  usr/share/doc/mariadb-client-core/changelog.Debian.gz
+ea51e0f543151819f399b65441e80ffb  usr/share/doc/mariadb-client-core/copyright
+7b293675b49cc17ee6f4eadadb05a677  usr/share/man/man1/my_print_defaults.1.gz
+8bd6c5633b3ee24735a5e674c43e2880  usr/share/man/man1/mysql.1.gz
+9e32701caf0344b2da808b28ec1a1d8f  usr/share/man/man1/mysqlcheck.1.gz

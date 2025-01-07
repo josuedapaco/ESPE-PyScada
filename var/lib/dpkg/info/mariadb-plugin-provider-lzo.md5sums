@@ -1,0 +1,4 @@
+50657e39c7352246a090833d2fff5b48  usr/lib/mysql/plugin/provider_lzo.so
+1fc2769c7dadb9eb35760b1f0265c6c8  usr/share/doc/mariadb-plugin-provider-lzo/changelog.Debian.gz
+ea51e0f543151819f399b65441e80ffb  usr/share/doc/mariadb-plugin-provider-lzo/copyright
+4983ae1da5ef2215479436c13abdb589  usr/share/lintian/overrides/mariadb-plugin-provider-lzo

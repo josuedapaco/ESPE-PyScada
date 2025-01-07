@@ -1,0 +1,7 @@
+-- Deployed ACME Certificate --
+Changed vhost at /etc/nginx/sites-enabled/pyscada.conf with addresses of 443 ssl, 80
+	ssl_certificate /etc/letsencrypt/live/astap.cloud/fullchain.pem
+	ssl_certificate_key /etc/letsencrypt/live/astap.cloud/privkey.pem
+Changed vhost at /etc/nginx/sites-enabled/pyscada.conf with addresses of 443 ssl, 80
+	ssl_certificate /etc/letsencrypt/live/astap.cloud/fullchain.pem
+	ssl_certificate_key /etc/letsencrypt/live/astap.cloud/privkey.pem

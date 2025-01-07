@@ -1,0 +1,13 @@
+Module: optional-lockout-preauth
+[success=1 default=ignore] pam_exec.so quiet /usr/lib/core/lockout-not-enabled.sh
+requisite pam_faillock.so preauth
+Module: snappy-extrausers
+[success=end authinfo_unavail=ignore default=bad] pam_extrausers.so nodelay nullok try_first_pass
+Module: unix
+[success=end default=ignore]	pam_unix.so nullok try_first_pass
+Module: optional-lockout
+[success=1 default=ignore] pam_exec.so quiet /usr/lib/core/lockout-not-enabled.sh
+[default=ignore] pam_faillock.so authfail
+Module: optional-lockout-authsucc
+[success=1 default=ignore] pam_exec.so quiet /usr/lib/core/lockout-not-enabled.sh
+sufficient pam_faillock.so authsucc

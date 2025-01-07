@@ -1,0 +1,16 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: rfc3987
+Upstream-Contact: Daniel Gerber <daniel.g.gerber@gmail.com>
+Source: https://github.com/dgerber/rfc3987
+
+Files: *
+Copyright: Daniel Gerber <daniel.g.gerber@gmail.com>
+License: GPL-3+
+
+Files: debian/*
+Copyright: 2022 Agathe Porte <debian@microjoe.org>
+License: GPL-3+
+
+License: GPL-3+
+ On Debian systems the full text of the GPL-3 can be found in
+ /usr/share/common-licenses/GPL-3

@@ -1,0 +1,3 @@
+/etc/nginx/nginx.conf
+/etc/nginx/mime.types
+/etc/nginx/sites-enabled/pyscada.conf

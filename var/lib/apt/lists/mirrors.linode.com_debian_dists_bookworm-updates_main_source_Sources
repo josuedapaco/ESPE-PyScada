@@ -1,0 +1,158 @@
+Package: ikiwiki-hosting
+Binary: ikiwiki-hosting-common, ikiwiki-hosting-dns, ikiwiki-hosting-web
+Version: 0.20220716-2+deb12u1
+Maintainer: Simon McVittie <smcv@debian.org>
+Build-Depends: debhelper-compat (= 13), ikiwiki
+Architecture: any all
+Standards-Version: 4.6.2
+Format: 3.0 (quilt)
+Vcs-Browser: https://salsa.debian.org/debian/ikiwiki-hosting
+Vcs-Git: https://salsa.debian.org/debian/ikiwiki-hosting.git
+Checksums-Sha256:
+ d2e7aff8c2e4139f1ff5c4aeae1950eaafeba243d7f63ef0bbc1959e74d6e276 2394 ikiwiki-hosting_0.20220716-2+deb12u1.dsc
+ 0a81c7d5e1f3cce4564c92c74e5a5c5a1ad98bced5d62c5d9f69e97020697cd5 112720 ikiwiki-hosting_0.20220716.orig.tar.xz
+ c3ba88ae4a4b7ce9994cd05a417840382b5a4b79163dd17229be125b1efaffe8 22756 ikiwiki-hosting_0.20220716-2+deb12u1.debian.tar.xz
+Homepage: https://ikiwiki-hosting.branchable.com/
+Package-List: 
+ ikiwiki-hosting-common deb admin optional arch=all
+ ikiwiki-hosting-dns deb admin optional arch=all
+ ikiwiki-hosting-web deb admin optional arch=any
+Testsuite: autopkgtest, autopkgtest-pkg-perl
+Testsuite-Triggers: libfile-slurp-perl, libnss-wrapper
+Directory: pool/main/i/ikiwiki-hosting
+Priority: source
+Section: admin
+
+Package: llvm-toolchain-19
+Binary: clang-19, clang-tools-19, clang-format-19, clang-tidy-19, clangd-19, clang-19-doc, libclang1-19, libclang-19-dev, libclang-common-19-dev, libclang-rt-19-dev, libclang-rt-19-dev-wasm32, libclang-rt-19-dev-wasm64, libpolly-19-dev, libclang-cpp19, libclang-cpp19-dev, libfuzzer-19-dev, python3-clang-19, clang-19-examples, libllvm19, llvm-19-linker-tools, llvm-19, llvm-19-runtime, llvm-19-dev, llvm-19-tools, libllvm-19-ocaml-dev, llvm-19-doc, llvm-19-examples, lld-19, liblld-19, liblld-19-dev, lldb-19, liblldb-19, python3-lldb-19, liblldb-19-dev, libomp-19-dev, libomp5-19, libomp-19-doc, libc++1-19, libc++-19-dev, libc++-19-dev-wasm32, libc++abi1-19, libc++abi-19-dev, libc++abi-19-dev-wasm32, libclc-19, libclc-19-dev, libunwind-19, libunwind-19-dev, mlir-19-tools, libmlir-19, libmlir-19-dev, bolt-19, libbolt-19-dev, flang-19, libflang-19-dev, libllvmlibc-19-dev
+Version: 1:19.1.4-1~deb12u1
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Uploaders: Sylvestre Ledru <sylvestre@debian.org>, Gianfranco Costamagna <locutusofborg@debian.org>
+Build-Depends: debhelper (>= 10.0), cmake, ninja-build, chrpath, texinfo, sharutils, libelf-dev, libffi-dev, lsb-release, patchutils, diffstat, xz-utils, python3-dev, libedit-dev, libncurses-dev, swig, python3-sphinx (>= 1.3.6), binutils-dev, libxml2-dev, libjsoncpp-dev, pkg-config, libipt-dev [amd64 i386], lcov, procps, help2man, zlib1g-dev, libzstd-dev, g++-multilib [amd64 i386 mips64 mips64el mipsel powerpc ppc64 s390x sparc sparc64 x32] | hello [amd64 i386 mips64 mips64el mipsel powerpc ppc64 s390x sparc sparc64 x32], libjs-mathjax, python3-myst-parser, python3-pexpect, doxygen, time, ocaml-base [amd64 arm64 ppc64el riscv64 s390x] | ocaml-nox [amd64 arm64 ppc64el riscv64 s390x], ocaml-findlib [amd64 arm64 ppc64el riscv64 s390x], libctypes-ocaml-dev [amd64 arm64 ppc64el riscv64 s390x], dh-exec, dh-ocaml [amd64 arm64 ppc64el riscv64 s390x], libpfm4-dev [linux-any], python3-setuptools, libz3-dev [!sh4], llvm-spirv-14 [amd64 arm64 armhf i386 ppc64 ppc64el riscv64 s390x] <!stage1> | hello [amd64 arm64 armhf i386 ppc64 ppc64el riscv64 s390x] <!stage1>, spirv-tools [linux-any] <!stage1> | hello [linux-any] <!stage1>, wasi-libc | hello, libcurl4-openssl-dev <!stage1> | libcurl-dev <!stage1>, libgrpc++-dev [amd64 arm64 armel armhf mips64el mipsel ppc64 ppc64el powerpc riscv64 s390x] <!stage1>, protobuf-compiler-grpc [amd64 arm64 armel armhf mips64el mipsel ppc64 ppc64el powerpc riscv64 s390x] <!stage1>, libprotobuf-dev [amd64 arm64 armel armhf mips64el mipsel ppc64 ppc64el powerpc riscv64 s390x] <!stage1>, protobuf-compiler [amd64 arm64 armel armhf mips64el mipsel ppc64 ppc64el powerpc riscv64 s390x] <!stage1>
+Build-Conflicts: oprofile
+Architecture: any all
+Standards-Version: 4.7.0
+Format: 3.0 (quilt)
+Vcs-Browser: https://salsa.debian.org/pkg-llvm-team/llvm-toolchain/tree/19
+Vcs-Git: https://salsa.debian.org/pkg-llvm-team/llvm-toolchain.git -b 19
+Checksums-Sha256:
+ 14793356d68d68a9cf434e07160072350fb4a11df59890e48bef388fdbef9165 8080 llvm-toolchain-19_19.1.4-1~deb12u1.dsc
+ 8ac1429a4427afb7fb27d0772f4b2114f8f85025d6fd47ce5ef0e776633088ee 164012548 llvm-toolchain-19_19.1.4.orig.tar.xz
+ 2c44172e7f3b540e7da270fef82bd57d2647ebcffbb988d0ddb66d9915a10f93 154516 llvm-toolchain-19_19.1.4-1~deb12u1.debian.tar.xz
+Homepage: https://www.llvm.org/
+Package-List: 
+ bolt-19 deb devel optional arch=amd64,arm64
+ clang-19 deb devel optional arch=any
+ clang-19-doc deb doc optional arch=all
+ clang-19-examples deb doc optional arch=all
+ clang-format-19 deb devel optional arch=any
+ clang-tidy-19 deb devel optional arch=any
+ clang-tools-19 deb devel optional arch=any
+ clangd-19 deb devel optional arch=any
+ flang-19 deb devel optional arch=amd64,arm64,ppc64el,ppc64,sparc64,riscv64,loong64
+ libbolt-19-dev deb libdevel optional arch=amd64,arm64
+ libc++-19-dev deb libdevel optional arch=any
+ libc++-19-dev-wasm32 deb libdevel optional arch=all
+ libc++1-19 deb libs optional arch=any
+ libc++abi-19-dev deb libdevel optional arch=any
+ libc++abi-19-dev-wasm32 deb libdevel optional arch=all
+ libc++abi1-19 deb libs optional arch=any
+ libclang-19-dev deb libdevel optional arch=any
+ libclang-common-19-dev deb libdevel optional arch=any
+ libclang-cpp19 deb libs optional arch=any
+ libclang-cpp19-dev deb libdevel optional arch=any
+ libclang-rt-19-dev deb libdevel optional arch=any
+ libclang-rt-19-dev-wasm32 deb libdevel optional arch=all
+ libclang-rt-19-dev-wasm64 deb libdevel optional arch=all
+ libclang1-19 deb libs optional arch=any
+ libclc-19 deb libs optional arch=all
+ libclc-19-dev deb libdevel optional arch=all
+ libflang-19-dev deb libdevel optional arch=amd64,arm64,ppc64el,ppc64,sparc64,riscv64,loong64
+ libfuzzer-19-dev deb libdevel optional arch=linux-any
+ liblld-19 deb libs optional arch=amd64,arm64,armel,armhf,i386,mipsel,mips64el,ppc64el,s390x,sparc,m68k,ppc64,sparc64,x32,riscv64,loong64
+ liblld-19-dev deb libdevel optional arch=amd64,arm64,armel,armhf,i386,mipsel,mips64el,ppc64el,s390x,sparc,m68k,ppc64,sparc64,x32,riscv64,loong64
+ liblldb-19 deb libs optional arch=amd64,arm64,armel,armhf,i386,loong64,m68k,ppc64el,riscv64,s390x,x32
+ liblldb-19-dev deb libdevel optional arch=amd64,arm64,armel,armhf,i386,loong64,m68k,ppc64el,riscv64,s390x,x32
+ libllvm-19-ocaml-dev deb ocaml optional arch=amd64,arm64,ppc64el,riscv64,s390x
+ libllvm19 deb libs optional arch=any
+ libllvmlibc-19-dev deb libdevel optional arch=amd64,arm64,armhf
+ libmlir-19 deb libs optional arch=any
+ libmlir-19-dev deb libdevel optional arch=any
+ libomp-19-dev deb libdevel optional arch=amd64,arm64,armhf,ppc64,ppc64el,hurd-amd64,loong64,mips64el,riscv64
+ libomp-19-doc deb doc optional arch=all
+ libomp5-19 deb devel optional arch=amd64,arm64,armhf,ppc64,ppc64el,hurd-amd64,loong64,mips64el,riscv64
+ libpolly-19-dev deb libdevel optional arch=any
+ libunwind-19 deb libs optional arch=amd64,arm64,armhf,i386,loong64,ppc64el,ppc64,riscv64
+ libunwind-19-dev deb libdevel optional arch=amd64,arm64,armhf,i386,loong64,ppc64el,ppc64,riscv64
+ lld-19 deb devel optional arch=amd64,arm64,armel,armhf,i386,mipsel,mips64el,ppc64el,s390x,sparc,m68k,ppc64,sparc64,x32,riscv64,loong64
+ lldb-19 deb devel optional arch=amd64,arm64,armel,armhf,i386,loong64,m68k,ppc64el,riscv64,s390x,x32
+ llvm-19 deb devel optional arch=any
+ llvm-19-dev deb devel optional arch=any
+ llvm-19-doc deb doc optional arch=all
+ llvm-19-examples deb doc optional arch=all
+ llvm-19-linker-tools deb devel optional arch=any
+ llvm-19-runtime deb devel optional arch=any
+ llvm-19-tools deb devel optional arch=any
+ mlir-19-tools deb devel optional arch=any
+ python3-clang-19 deb python optional arch=any
+ python3-lldb-19 deb python optional arch=amd64,arm64,armel,armhf,i386,loong64,m68k,ppc64el,riscv64,s390x,x32
+Testsuite: autopkgtest
+Testsuite-Triggers: build-essential, cmake, dpkg-dev, file, g++, gcc, libstdc++-14-dev, make
+Directory: pool/main/l/llvm-toolchain-19
+Priority: optional
+Section: misc
+
+Package: tzdata
+Binary: tzdata
+Version: 2024b-0+deb12u1
+Maintainer: GNU Libc Maintainers <debian-glibc@lists.debian.org>
+Uploaders: Clint Adams <clint@debian.org>, Aurelien Jarno <aurel32@debian.org>, Benjamin Drung <bdrung@debian.org>
+Build-Depends: debhelper-compat (= 13)
+Build-Depends-Indep: gawk, po-debconf, python3 (>= 3.9), python3-debian, python3-natsort, python3-polib
+Architecture: all
+Standards-Version: 4.6.2
+Format: 3.0 (quilt)
+Vcs-Browser: https://salsa.debian.org/glibc-team/tzdata
+Vcs-Git: https://salsa.debian.org/glibc-team/tzdata.git
+Checksums-Sha256:
+ b04aa6ead0a73875a45232af4d15c7064f315be181aa2b920ec337ffbf1e422c 2396 tzdata_2024b-0+deb12u1.dsc
+ 70e754db126a8d0db3d16d6b4cb5f7ec1e04d5f261255e4558a67fe92d39e550 459393 tzdata_2024b.orig.tar.gz
+ 5bc86ae1ee1f600eefefd5377faf5519d4863c960efb625286638d077178d883 833 tzdata_2024b.orig.tar.gz.asc
+ 34378ab9dc647c3c6d2cae6b60821b372b63f3fe82ab3e816fd861e4046fb20d 121868 tzdata_2024b-0+deb12u1.debian.tar.xz
+Homepage: https://www.iana.org/time-zones
+Package-List: 
+ tzdata deb localization required arch=all
+Testsuite: autopkgtest
+Testsuite-Triggers: python3, python3-debian
+Directory: pool/main/t/tzdata
+Priority: source
+Section: localization
+
+Package: xscreensaver
+Binary: xscreensaver, xscreensaver-data, xscreensaver-data-extra, xscreensaver-gl, xscreensaver-gl-extra, xscreensaver-screensaver-webcollage, xscreensaver-screensaver-bsod
+Version: 6.06+dfsg1-3+deb12u1
+Maintainer: Tormod Volden <debian.tormod@gmail.com>
+Build-Depends: debhelper-compat (= 12), bc, fortune-mod, intltool, libcap-dev [linux-any], libgl-dev, libgle-dev, libglu1-mesa-dev | xlibmesa-glu-dev | libglu-dev, libgtk-3-dev, libgdk-pixbuf-2.0-dev | libgdk-pixbuf2.0-dev, libjpeg-dev, libpam0g-dev, libpng-dev, libsystemd-dev [linux-any], libx11-dev, libxext-dev, libxinerama-dev, libxml2-dev, libxmu-dev, libxrandr-dev, libxss-dev, libxt-dev, libxtst-dev, libxxf86vm-dev, pkg-config, quilt, x11proto-core-dev, xbitmaps, xutils-dev
+Architecture: any
+Standards-Version: 4.6.2
+Format: 3.0 (quilt)
+Vcs-Browser: https://salsa.debian.org/debian/xscreensaver
+Vcs-Git: https://salsa.debian.org/debian/xscreensaver.git
+Checksums-Sha256:
+ f9f351034882fd0f9c43319db3cff783fbd6240b001a56eb0e7b13381d7d7902 2379 xscreensaver_6.06+dfsg1-3+deb12u1.dsc
+ 0ad73d52ad297a2380cc2a1a10e4773c2bf0f0cecd025ee00b80da83a6fd9164 10041896 xscreensaver_6.06+dfsg1.orig.tar.xz
+ 813d21b49838cf63fd0be234c4aa47b9c7d568f570eb1cc52c7aa44c0e0ee24e 126684 xscreensaver_6.06+dfsg1-3+deb12u1.debian.tar.xz
+Homepage: https://www.jwz.org/xscreensaver/
+Dgit: aeca4fb91218d2f7ace9fba44a6d2057fbcce2bc debian archive/debian/6.06+dfsg1-3+deb12u1 https://git.dgit.debian.org/xscreensaver
+Package-List: 
+ xscreensaver deb x11 optional arch=any
+ xscreensaver-data deb x11 optional arch=any
+ xscreensaver-data-extra deb x11 optional arch=any
+ xscreensaver-gl deb x11 optional arch=any
+ xscreensaver-gl-extra deb x11 optional arch=any
+ xscreensaver-screensaver-bsod deb x11 optional arch=any
+ xscreensaver-screensaver-webcollage deb x11 optional arch=any
+Directory: pool/main/x/xscreensaver
+Priority: source
+Section: x11
+

@@ -1,0 +1,75 @@
+name: core24
+# version: "24"
+adopt-info: bootstrap
+summary: Runtime environment based on Ubuntu 24.04
+description: |
+  The base snap based on the Ubuntu 24.04 release.
+confinement: strict
+type: base
+build-base: core24
+grade: stable
+assumes: [snapd2.55.5]
+
+parts:
+  base:
+    plugin: nil
+    source: keyrings
+    build-packages:
+      - wget
+    build-environment:
+      - RELEASE: "24.04"
+      - DOT_RELEASE: "1"
+      - BASE: ubuntu-base-${RELEASE}${DOT_RELEASE:+.$DOT_RELEASE}-base-${CRAFT_ARCH_BUILD_FOR}.tar.gz
+      - DIR_URL: https://cdimage.ubuntu.com/ubuntu-base/releases/${RELEASE}/release
+      - URL: ${DIR_URL}/${BASE}
+      - SHA256: ${DIR_URL}/SHA256SUMS
+      - SIG: ${SHA256}.gpg
+    override-pull: |
+      craftctl default
+      wget "${SHA256}" "${SIG}" "${URL}"
+      gpg --no-default-keyring \
+          --keyring ./cd-image-keying.gpg \
+          --verify SHA256SUMS.gpg SHA256SUMS
+      awk -v "file=${BASE}" '$2=="*"file' SHA256SUMS | sha256sum -c
+    override-build: |
+      mkdir -p "${CRAFT_PART_INSTALL}/base"
+      tar -x --xattrs-include=* -f "${BASE}" -C "${CRAFT_PART_INSTALL}/base"
+    override-stage: |
+      rm -rf "${CRAFT_STAGE}/base"
+      craftctl default
+    override-prime: |
+      # Do nothing
+  splash-theme:
+    plugin: dump
+    source: https://github.com/snapcore/plymouth-theme-ubuntu-core.git
+    source-type: git
+    organize:
+      ubuntu-core: usr/share/plymouth/themes/ubuntu-core
+      copyright: usr/share/doc/plymouth-theme-ubuntu-core/copyright
+    stage:
+      - -README.md
+  bootstrap:
+    after:
+      - base
+    plugin: make
+    source: .
+    build-packages:
+      - shellcheck
+      - distro-info
+      - python3-debian
+      - python3-requests
+      - python3-yaml
+    override-pull: |
+      craftctl default
+      # detect whether we are doing a fips build on LP
+      if git remote get-url origin | grep "fips"; then
+        craftctl set version="$(/bin/date +%Y%m%d)+fips"
+        echo "SNAP_FIPS_BUILD=1" > ./.fips-env
+      else
+        craftctl set version="$(/bin/date +%Y%m%d)"
+        rm -f ./.fips-env
+      fi
+    override-prime: |
+      craftctl default
+      # ensure build-in tests are run
+      cd ${CRAFT_PART_SRC} && make test TESTDIR=${CRAFT_PRIME}

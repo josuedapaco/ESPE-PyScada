@@ -1,0 +1,28 @@
+Package: cloud-init
+Version: 22.4.2-1+deb12u1akamai1
+Architecture: all
+Maintainer: Debian Cloud Team <debian-cloud@lists.debian.org>
+Installed-Size: 2722
+Depends: eject, fdisk | util-linux (<< 2.29.2-3~), gdisk, isc-dhcp-client, locales, lsb-base, lsb-release, procps, python3-configobj, python3-jinja2, python3-jsonpatch, python3-jsonschema, python3-netifaces, python3-oauthlib, python3-requests, python3-serial, python3-yaml, python3:any
+Recommends: cloud-guest-utils, eatmydata, sudo
+Suggests: btrfs-progs, e2fsprogs, xfsprogs
+Conflicts: cloud-init-22.4.2
+Replaces: cloud-init-22.4.2
+Filename: all/cloud-init_22.4.2-1+deb12u1akamai1_all.deb
+Size: 591128
+MD5sum: ed7b503b7ad522675e1f6ad17e8fa825
+SHA1: ac067d76cac999063ab834de06ef8178b7208fc8
+SHA256: 43993afd3d69053fa7367d7d50f4e3ceaa33a54e0ee1ceccb93221ff168511a6
+Section: admin
+Priority: optional
+Homepage: https://launchpad.net/cloud-init
+Description: initialization system for infrastructure cloud instances
+ Cloud-init provides a framework and tool to configure and customize virtual
+ machine instances for Infrastructure-as-a-Service (IaaS) clouds platforms. It
+ can for example set a default locale and hostname, generate SSH private host
+ keys, install SSH public keys for logging into a default account, set up
+ ephemeral mount points, and run user-provided scripts.
+ .
+ Various methods are supported for passing data to the instance at launch
+ time, including the standard interfaces of multiple platforms.
+

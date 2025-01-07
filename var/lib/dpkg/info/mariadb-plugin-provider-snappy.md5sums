@@ -1,0 +1,4 @@
+cc16430cba39ebcf7d7bee15156a8d9b  usr/lib/mysql/plugin/provider_snappy.so
+868677e7fee99716e6d01d5b31c8f4ce  usr/share/doc/mariadb-plugin-provider-snappy/changelog.Debian.gz
+ea51e0f543151819f399b65441e80ffb  usr/share/doc/mariadb-plugin-provider-snappy/copyright
+0ae309d78fdedc62cf16f8f214625db4  usr/share/lintian/overrides/mariadb-plugin-provider-snappy

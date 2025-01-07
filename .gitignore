@@ -1,0 +1,9 @@
+/sys/
+/proc/
+/dev/
+/root/
+/tmp/
+*.log
+*.pid
+*.sock
+

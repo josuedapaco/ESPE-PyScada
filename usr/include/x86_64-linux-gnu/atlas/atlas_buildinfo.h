@@ -1,0 +1,31 @@
+#ifndef ATL_INSTINFO_H
+   #define ATL_INSTINFO_H
+
+#define ATL_ARCH "x86SSE264SSE2"
+#define ATL_INSTFLAGS "-1 0 -a 1 -l 1"
+#define ATL_F2CDEFS "-DAdd_ -DF77_INTEGER=int -DStringSunStyle"
+#define ATL_ARCHDEFS "-DATL_OS_Linux -DATL_ARCH_x86SSE2 -DATL_CPUMHZ=1996 -DATL_SSE2 -DATL_SSE1 -DATL_USE64BITS -DATL_GAS_x8664"
+#define ATL_DKCFLAGS "-Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -ffile-prefix-map=/build/atlas-EY1WMi/atlas-3.10.3=. -fstack-protector-strong -m64 -fPIC"
+#define ATL_DKC "/usr/bin/gcc"
+#define ATL_SKCFLAGS "-Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -ffile-prefix-map=/build/atlas-EY1WMi/atlas-3.10.3=. -fstack-protector-strong -m64 -fPIC"
+#define ATL_SKC "/usr/bin/gcc"
+#define ATL_DMCFLAGS "-Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -ffile-prefix-map=/build/atlas-EY1WMi/atlas-3.10.3=. -fstack-protector-strong -m64 -fPIC"
+#define ATL_DMC "/usr/bin/gcc"
+#define ATL_SMCFLAGS "-Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -ffile-prefix-map=/build/atlas-EY1WMi/atlas-3.10.3=. -fstack-protector-strong -m64 -fPIC"
+#define ATL_SMC "/usr/bin/gcc"
+#define ATL_ICCFLAGS "-DL2SIZE=33554432 -I/build/atlas-EY1WMi/atlas-3.10.3/build/include -I/build/atlas-EY1WMi/atlas-3.10.3/build/..//include -I/build/atlas-EY1WMi/atlas-3.10.3/build/..//include/contrib -DAdd_ -DF77_INTEGER=int -DStringSunStyle -DATL_OS_Linux -DATL_ARCH_x86SSE2 -DATL_CPUMHZ=1996 -DATL_SSE2 -DATL_SSE1 -DATL_USE64BITS -DATL_GAS_x8664 -m64 -DATL_DYLIBS -DWALL -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -ffile-prefix-map=/build/atlas-EY1WMi/atlas-3.10.3=. -fstack-protector-strong -m64 -fPIC"
+#define ATL_ICC "/usr/bin/gcc"
+#define ATL_F77FLAGS "-g -O2 -ffile-prefix-map=/build/atlas-EY1WMi/atlas-3.10.3=. -fstack-protector-strong -m64 -fPIC"
+#define ATL_F77 "/usr/bin/gfortran"
+#define ATL_DKCVERS "gcc (Debian 12.2.0-9) 12.2.0"
+#define ATL_SKCVERS "gcc (Debian 12.2.0-9) 12.2.0"
+#define ATL_DMCVERS "gcc (Debian 12.2.0-9) 12.2.0"
+#define ATL_SMCVERS "gcc (Debian 12.2.0-9) 12.2.0"
+#define ATL_ICCVERS "gcc (Debian 12.2.0-9) 12.2.0"
+#define ATL_F77VERS "GNU Fortran (Debian 12.2.0-9) 12.2.0"
+#define ATL_SYSINFO "Linux x86-csail-01 5.10.0-19-amd64 #1 SMP Debian 5.10.149-2 (2022-10-21) x86_64 GNU/Linux"
+#define ATL_DATE    "Wed Nov 30 09:35:28 UTC 2022"
+#define ATL_UNAM    "buildd"
+#define ATL_VERS    "3.10.3"
+
+#endif

@@ -1,0 +1,94 @@
+snapcraft-version: 8.3.4
+snapcraft-started-at: '2024-09-20T08:04:09.985908Z'
+snapcraft-os-release-id: ubuntu
+snapcraft-os-release-version-id: '24.04'
+name: core24
+version: '20240920'
+summary: Runtime environment based on Ubuntu 24.04
+description: |
+  The base snap based on the Ubuntu 24.04 release.
+base: null
+grade: stable
+confinement: strict
+apps: null
+parts:
+  base:
+    plugin: nil
+    source: keyrings
+    build-packages:
+    - wget
+    build-environment:
+    - RELEASE: '24.04'
+    - DOT_RELEASE: '1'
+    - BASE: ubuntu-base-${RELEASE}${DOT_RELEASE:+.$DOT_RELEASE}-base-amd64.tar.gz
+    - DIR_URL: https://cdimage.ubuntu.com/ubuntu-base/releases/${RELEASE}/release
+    - URL: ${DIR_URL}/${BASE}
+    - SHA256: ${DIR_URL}/SHA256SUMS
+    - SIG: ${SHA256}.gpg
+    override-pull: |
+      craftctl default
+      wget "${SHA256}" "${SIG}" "${URL}"
+      gpg --no-default-keyring \
+          --keyring ./cd-image-keying.gpg \
+          --verify SHA256SUMS.gpg SHA256SUMS
+      awk -v "file=${BASE}" '$2=="*"file' SHA256SUMS | sha256sum -c
+    override-build: |
+      mkdir -p "${CRAFT_PART_INSTALL}/base"
+      tar -x --xattrs-include=* -f "${BASE}" -C "${CRAFT_PART_INSTALL}/base"
+    override-stage: |
+      rm -rf "/build/core24/stage/base"
+      craftctl default
+    override-prime: |
+      # Do nothing
+    stage-packages: []
+    stage: []
+    prime: []
+  splash-theme:
+    plugin: dump
+    source: https://github.com/snapcore/plymouth-theme-ubuntu-core.git
+    source-type: git
+    organize:
+      ubuntu-core: usr/share/plymouth/themes/ubuntu-core
+      copyright: usr/share/doc/plymouth-theme-ubuntu-core/copyright
+    stage:
+    - -README.md
+    stage-packages: []
+    prime: []
+    build-packages: []
+  bootstrap:
+    after:
+    - base
+    plugin: make
+    source: .
+    build-packages:
+    - shellcheck
+    - distro-info
+    - python3-debian
+    - python3-requests
+    - python3-yaml
+    override-pull: |
+      craftctl default
+      # detect whether we are doing a fips build on LP
+      if git remote get-url origin | grep "fips"; then
+        craftctl set version="$(/bin/date +%Y%m%d)+fips"
+        echo "SNAP_FIPS_BUILD=1" > ./.fips-env
+      else
+        craftctl set version="$(/bin/date +%Y%m%d)"
+        rm -f ./.fips-env
+      fi
+    override-prime: |
+      craftctl default
+      # ensure build-in tests are run
+      cd ${CRAFT_PART_SRC} && make test TESTDIR=/build/core24/prime
+    stage-packages: []
+    stage: []
+    prime: []
+architectures:
+- amd64
+image-info:
+  build-request-id: lp-92285189
+  build-request-timestamp: '2024-09-20T08:00:41Z'
+  build_url: https://launchpad.net/~ubuntu-core-service/+snap/core24/+build/2602814
+build-packages: []
+build-snaps: []
+primed-stage-packages: []

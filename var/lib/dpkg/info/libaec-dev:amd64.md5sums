@@ -1,0 +1,9 @@
+c3f66b488779eef1f3b1767724ecdf8e  usr/include/libaec.h
+11df70fee6ade11b887e1c0957de70ca  usr/include/szlib.h
+23ce64c31ad73933c19c6c2bf5ecbe3f  usr/lib/x86_64-linux-gnu/libaec.a
+4d6b15d302987789480c92b85f4184fd  usr/lib/x86_64-linux-gnu/libsz.a
+060b69814f51fc9eb84803b5a1e8bf90  usr/share/doc/libaec-dev/changelog.Debian.amd64.gz
+bd03db53fa3433a53653c45c0a4e698a  usr/share/doc/libaec-dev/changelog.Debian.gz
+fd1da734263304ae11705d500c487af2  usr/share/doc/libaec-dev/changelog.gz
+7b4b2f17ea1743350c6a24007154e243  usr/share/doc/libaec-dev/copyright
+5beee2c55725b8250389dc1b37b13294  usr/share/man/man1/aec.1.gz

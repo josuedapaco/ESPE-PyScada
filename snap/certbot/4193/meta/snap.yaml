@@ -1,0 +1,49 @@
+name: certbot
+version: 3.0.1
+summary: Automatically configure HTTPS using Let's Encrypt
+description: |
+  The objective of Certbot, Let's Encrypt, and the ACME (Automated
+  Certificate Management Environment) protocol is to make it possible
+  to set up an HTTPS server and have it automatically obtain a
+  browser-trusted certificate, without any human intervention. This is
+  accomplished by running a certificate management agent on the web
+  server.
+
+  This agent is used to:
+    - Automatically prove to the Let's Encrypt CA that you control the website
+    - Obtain a browser-trusted certificate and set it up on your web server
+    - Keep track of when your certificate is going to expire, and renew it
+    - Help you revoke the certificate if that ever becomes necessary.
+architectures:
+- amd64
+base: core24
+apps:
+  certbot:
+    command: bin/python3 -s $SNAP/bin/certbot
+    environment:
+      PATH: $SNAP/bin:$SNAP/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+      AUGEAS_LENS_LIB: $SNAP/usr/share/augeas/lenses/dist
+      CERTBOT_SNAPPED: 'True'
+  renew:
+    command: bin/python3 -s $SNAP/bin/certbot -q renew
+    timer: 00:00~24:00/2
+    daemon: oneshot
+    environment:
+      PATH: $SNAP/bin:$SNAP/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+      AUGEAS_LENS_LIB: $SNAP/usr/share/augeas/lenses/dist
+      CERTBOT_SNAPPED: 'True'
+confinement: classic
+grade: stable
+environment:
+  PYTHONPATH: $SNAP/lib/python3.12/site-packages:${PYTHONPATH}
+plugs:
+  plugin:
+    content: certbot-1
+    interface: content
+    target: $SNAP/certbot-plugin
+slots:
+  certbot-metadata:
+    interface: content
+    content: metadata-1
+    read:
+    - $SNAP/certbot-metadata

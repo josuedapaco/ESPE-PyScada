@@ -1,0 +1,62 @@
+#!/bin/bash
+ 
+### BEGIN INIT INFO
+# Provides:			 pyscada_daemon
+# Required-Start:	 $all
+# Required-Stop:	 $all
+# Default-Start:	 2 3 4 5
+# Default-Stop:		 0 1 6
+# Short-Description: starts the pyscada daemon
+# Description:		 starts pyscada daemon
+### END INIT INFO
+
+if [ -f /etc/default/pyscada_daemon ] ; then
+	. /etc/default/pyscada_daemon
+else
+	# use default values
+	DJANGO_DIR=/var/www/pyscada/PyScadaServer/
+	RUN_AS='pyscada'
+fi
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+
+start () {
+	echo "Spawning PyScada Daemon"
+	start-stop-daemon --start -c $RUN_AS -d $DJANGODIR --exec manage.py -- pyscada_daemon start
+
+	done
+	return
+}
+
+
+stop () {
+    echo "Stop PyScada Daemon"
+	start-stop-daemon --start -c $RUN_AS -d $DJANGODIR --exec manage.py -- pyscada_daemon stop
+	done
+	return
+}
+ 
+case "$1" in
+  start)
+		echo "Starting"
+		start
+		;;
+  stop)
+		echo "Stopping"
+		stop
+		;;
+  restart)
+		echo "Restarting"
+		stop
+		sleep 1
+		start
+		;;
+  *)
+		N=/etc/init.d/$NAME
+		echo "Usage: $N {start|stop|restart} " >&2
+		exit 1
+		;;
+esac
+ 
+exit 0

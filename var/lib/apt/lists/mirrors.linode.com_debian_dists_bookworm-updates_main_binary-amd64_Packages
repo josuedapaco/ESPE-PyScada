@@ -1,0 +1,1166 @@
+Package: ikiwiki-hosting-common
+Source: ikiwiki-hosting
+Version: 0.20220716-2+deb12u1
+Installed-Size: 509
+Maintainer: Simon McVittie <smcv@debian.org>
+Architecture: all
+Depends: perl:any
+Description: ikiwiki hosting: common files
+Homepage: https://ikiwiki-hosting.branchable.com/
+Description-md5: a9dbb4ce8cf09b5888a36e71afaa2735
+Section: admin
+Priority: optional
+Filename: pool/main/i/ikiwiki-hosting/ikiwiki-hosting-common_0.20220716-2+deb12u1_all.deb
+Size: 107788
+SHA256: 87e066f972392a34ecf6287b7a675bb9ebfb96ed74e661a0970d5caf6cdfb673
+
+Package: ikiwiki-hosting-dns
+Source: ikiwiki-hosting
+Version: 0.20220716-2+deb12u1
+Installed-Size: 61
+Maintainer: Simon McVittie <smcv@debian.org>
+Architecture: all
+Depends: bind9, ikiwiki-hosting-common, perl:any
+Description: ikiwiki hosting: dns server
+Homepage: https://ikiwiki-hosting.branchable.com/
+Description-md5: 4c1ee9d4ce9b8d5a774afbcf88a097bd
+Section: admin
+Priority: optional
+Filename: pool/main/i/ikiwiki-hosting/ikiwiki-hosting-dns_0.20220716-2+deb12u1_all.deb
+Size: 23376
+SHA256: 460f1e5a6f6cd9449f9b899ec56f206f04d2f61fa1b56f8cfcddc41dc99d8c1b
+
+Package: ikiwiki-hosting-web
+Source: ikiwiki-hosting
+Version: 0.20220716-2+deb12u1
+Installed-Size: 248
+Maintainer: Simon McVittie <smcv@debian.org>
+Architecture: amd64
+Depends: acl, adduser, apache2, apache2-suexec-pristine | apache2-suexec, dnsutils, gcc | clang | tcc, git (>= 1:1.7.0), gitweb (>= 1:1.7.0), ikiwiki (>= 3.20100723), ikiwiki-hosting-common, libauthen-passphrase-perl, libc6-dev | libc-dev, libcgi-formbuilder-perl (>= 3.05), libcgi-pm-perl, libcgi-session-perl (>= 4.14-1), libcoy-perl, libcrypt-ssleay-perl, libdata-compare-perl, libdatetime-perl, libfile-mimeinfo-perl, libgravatar-url-perl, libhighlight-perl, libhtml-tree-perl, libimage-magick-perl | perlmagick, liblocale-gettext-perl (>= 1.05-1), liblwpx-paranoidagent-perl, libmail-sendmail-perl, libmailtools-perl, libnet-inet6glue-perl, libnet-openid-consumer-perl (>= 1.03), librpc-xml-perl, libtext-csv-perl, libtext-markdown-perl (>= 1.0.26-1~bpo50+1), libtext-multimarkdown-perl, libtext-textile-perl, libtext-typography-perl, libtext-wikicreole-perl, libtext-wikiformat-perl, libtimedate-perl, libxml-feed-perl, libxml-simple-perl, libyaml-perl, libyaml-syck-perl, lsb-base, moreutils (>= 0.43), openssl, polygen, polygen-data, python3, python3-docutils, rsync, uuid, perl:any, libc6 (>= 2.34)
+Pre-Depends: init-system-helpers (>= 1.54~)
+Recommends: analog, certbot
+Conflicts: parallel
+Description: ikiwiki hosting: web server
+Homepage: https://ikiwiki-hosting.branchable.com/
+Description-md5: 241a687ddb963bcb7f26722ed3701479
+Section: admin
+Priority: optional
+Filename: pool/main/i/ikiwiki-hosting/ikiwiki-hosting-web_0.20220716-2+deb12u1_amd64.deb
+Size: 56868
+SHA256: d5ac1c83e24d1a6a75f9a18b6c3bb38ce9f3e024677fe9245f8e59ebb5584483
+
+Package: bolt-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 198339
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.36), libgcc-s1 (>= 3.3), libstdc++6 (>= 12), libz3-4 (>= 4.8.12), libzstd1 (>= 1.5.2), zlib1g (>= 1:1.2.0), libbolt-19-dev (= 1:19.1.4-1~deb12u1)
+Description: Post-link optimizer
+Homepage: https://www.llvm.org/
+Description-md5: a5816535f62942b4fcded9b86fb66840
+Section: devel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/bolt-19_19.1.4-1~deb12u1_amd64.deb
+Size: 37350552
+SHA256: f7022fe6ae9bd8a97e5bece2ac306b11d4fa106704d9c1122fb76762f43d5af5
+
+Package: clang-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 373
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Provides: c++-compiler, c-compiler, objc++-compiler, objc-compiler
+Depends: libc6 (>= 2.34), libclang-cpp19 (>= 1:19.1.4), libgcc-s1 (>= 3.0), libllvm19 (= 1:19.1.4-1~deb12u1), libstdc++6 (>= 11), libstdc++-12-dev, libgcc-12-dev, libobjc-12-dev, libclang-common-19-dev (= 1:19.1.4-1~deb12u1), llvm-19-linker-tools (= 1:19.1.4-1~deb12u1), libclang1-19 (= 1:19.1.4-1~deb12u1), libc6-dev, binutils
+Recommends: llvm-19-dev, python3
+Suggests: clang-19-doc, wasi-libc
+Description: C, C++ and Objective-C compiler
+Homepage: https://www.llvm.org/
+Description-md5: c364160e44345420df0f2e97b3082b69
+Section: devel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/clang-19_19.1.4-1~deb12u1_amd64.deb
+Size: 115440
+SHA256: f7f9520249218c6083928128471ab92447fa9dd943125fa3cfdf1aab7baa938d
+
+Package: clang-19-doc
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 10255
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: all
+Depends: libjs-mathjax
+Description: C, C++ and Objective-C compiler - Documentation
+Multi-Arch: foreign
+Homepage: https://www.llvm.org/
+Description-md5: 6bf5242bfe6f159fd907beb982f2315f
+Section: doc
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/clang-19-doc_19.1.4-1~deb12u1_all.deb
+Size: 1576488
+SHA256: 9efa85d86bbe2845e1f8b4d40fba138440db124fcb1d2d4ed332216d29c80a5c
+
+Package: clang-19-examples
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 86
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: all
+Description: Clang examples
+Multi-Arch: foreign
+Homepage: https://www.llvm.org/
+Description-md5: c2fd51cc2d722b8e5b1c1549d931bc06
+Section: doc
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/clang-19-examples_19.1.4-1~deb12u1_all.deb
+Size: 52288
+SHA256: 54c2762b0ef9a0455319e311c6f81b45980923bb48a4b69bc1583e28e7fc6975
+
+Package: clang-format-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 239
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libclang-cpp19 (>= 1:19.1.4), libgcc-s1 (>= 3.0), libllvm19 (= 1:19.1.4-1~deb12u1), libstdc++6 (>= 11), python3
+Description: Tool to format C/C++/Obj-C code
+Homepage: https://www.llvm.org/
+Description-md5: 5fdb7838fa336de9de2703cb644c12e4
+Section: devel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/clang-format-19_19.1.4-1~deb12u1_amd64.deb
+Size: 92360
+SHA256: 1a33632c64c965d3d7215c3abdd6f1b3bafee806dde15703e82072a44601a80b
+
+Package: clang-tidy-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 11688
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libclang-cpp19 (>= 1:19.1.4), libgcc-s1 (>= 3.0), libllvm19 (= 1:19.1.4-1~deb12u1), libstdc++6 (>= 11), python3, libclang-common-19-dev (= 1:19.1.4-1~deb12u1), clang-tools-19, python3-yaml
+Description: clang-based C++ linter tool
+Homepage: https://www.llvm.org/
+Description-md5: 239d974b460ce0b6a914aa94c05888ad
+Section: devel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/clang-tidy-19_19.1.4-1~deb12u1_amd64.deb
+Size: 1875112
+SHA256: f1a9a0b94fe87c27d3fa154aedea037e855e43048a03d62e16aa8380c147b027
+
+Package: clang-tools-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 43556
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.36), libclang-cpp19 (>= 1:19.1.4), libclang1-19 (>= 1:19.1.4-1~deb12u1), libgcc-s1 (>= 3.3), libllvm19, libstdc++6 (>= 11), libxml2 (>= 2.7.4), libz3-4 (>= 4.8.12), libzstd1 (>= 1.5.2), zlib1g (>= 1:1.1.4), clang-19 (= 1:19.1.4-1~deb12u1), python3
+Description: clang-based tools for C/C++ developments
+Homepage: https://www.llvm.org/
+Description-md5: da24a5a87f39211c1ff10f03f06e0a3c
+Section: devel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/clang-tools-19_19.1.4-1~deb12u1_amd64.deb
+Size: 8926012
+SHA256: ab4cbb6f414f87c37e4be5e14b856b76b795220eac645b0d70e4de15db8b4426
+
+Package: clangd-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 16770
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libabsl20220623 (>= 0~20220623.0-1), libc6 (>= 2.34), libclang-cpp19 (>= 1:19.1.4), libgcc-s1 (>= 3.0), libgrpc++1.51 (>= 1.51.1), libgrpc29 (>= 1.51.1), libllvm19 (= 1:19.1.4-1~deb12u1), libprotobuf32 (>= 3.21.12), libstdc++6 (>= 12), libclang-common-19-dev (= 1:19.1.4-1~deb12u1)
+Description: Language server that provides IDE-like features to editors
+Homepage: https://www.llvm.org/
+Description-md5: 9ae9ea58c7af3228199dd96c36ecd0bb
+Section: devel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/clangd-19_19.1.4-1~deb12u1_amd64.deb
+Size: 3197236
+SHA256: 6fe8c7aa49dd5116fa48a90ec32c74c73a06f29806b6954bda2278a995abb721
+
+Package: flang-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 136706
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Provides: fortran-compiler, gfortran-mod-15
+Depends: libc6 (>= 2.34), libclang-cpp19 (>= 1:19.1.4), libgcc-s1 (>= 3.0), libllvm19, libstdc++6 (>= 11), libstdc++-12-dev, libgcc-12-dev, libflang-19-dev (= 1:19.1.4-1~deb12u1)
+Description: Fortran compiler
+Homepage: https://www.llvm.org/
+Description-md5: bd017b88c85853e1292c78015b1d62a8
+Section: devel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/flang-19_19.1.4-1~deb12u1_amd64.deb
+Size: 24226108
+SHA256: 36a276978a525b6d56b53ae9bf6be8a9b276ea27a627b567275db083244bad08
+
+Package: libbolt-19-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 93
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Description: Post-link optimizer
+Homepage: https://www.llvm.org/
+Description-md5: a5816535f62942b4fcded9b86fb66840
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libbolt-19-dev_19.1.4-1~deb12u1_amd64.deb
+Size: 57396
+SHA256: 208bc8cd543233837d3b8f16d063b7961c02a3d37e87b114db9712fbf5979168
+
+Package: libc++-19-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 11878
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: libc++-x.y-dev
+Provides: libc++-x.y-dev
+Depends: libc++1-19 (= 1:19.1.4-1~deb12u1), libc++abi-19-dev (= 1:19.1.4-1~deb12u1), libunwind-19-dev
+Conflicts: libc++-x.y-dev
+Description: LLVM C++ Standard library (development files)
+Multi-Arch: same
+Homepage: https://www.llvm.org/
+Description-md5: 8cd44d2ae4969ab1c95a30917ddc69e7
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libc++-19-dev_19.1.4-1~deb12u1_amd64.deb
+Size: 1284104
+SHA256: 73d8dae85bc2b692f7e1cd110481f2b8ed6a6f8c677adc260dbed3368abbf19d
+
+Package: libc++-19-dev-wasm32
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 11015
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: all
+Replaces: libc++-x.y-dev-wasm32
+Provides: libc++-x.y-dev-wasm32
+Depends: wasi-libc, libc++abi-19-dev-wasm32
+Conflicts: libc++-x.y-dev-wasm32
+Description: LLVM C++ Standard library (WASI)
+Multi-Arch: foreign
+Homepage: https://www.llvm.org/
+Description-md5: 21e20e19acf2a499a9e194408e3990d7
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libc++-19-dev-wasm32_19.1.4-1~deb12u1_all.deb
+Size: 1456556
+SHA256: f5415b7507cb968c26902580b681b698eb3a46765651431dd3caf535933c8867
+
+Package: libc++1-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 1078
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: libc++-x.y
+Provides: libc++-x.y
+Depends: libc++abi1-19 (>= 1:19.1.4), libc6 (>= 2.34), libunwind-19 (>= 1:19.1.4)
+Suggests: clang
+Conflicts: libc++-x.y
+Description: LLVM C++ Standard library
+Multi-Arch: same
+Homepage: https://www.llvm.org/
+Description-md5: 3e11b80d657dd5ed05ee027e3cba65ca
+Section: libs
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libc++1-19_19.1.4-1~deb12u1_amd64.deb
+Size: 301344
+SHA256: 41fdccb696cc415ca05d3d4efaf8a826d92ceaa5e7c7682a11b2b7fb71e6e865
+
+Package: libc++abi-19-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 692
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: libc++abi-x.y-dev
+Provides: libc++abi-x.y-dev
+Depends: libc++abi1-19 (= 1:19.1.4-1~deb12u1)
+Conflicts: libc++abi-x.y-dev
+Breaks: libc++abi-dev (<= 44)
+Description: LLVM low level support for a standard C++ library (development files)
+Multi-Arch: same
+Homepage: https://www.llvm.org/
+Description-md5: 364169ef5dcd81ea07cbcba49d061676
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libc++abi-19-dev_19.1.4-1~deb12u1_amd64.deb
+Size: 127040
+SHA256: 49a950664a060624512f4adbe193d7d3ad114bd5b05760ce70dc3dc7832c0b5a
+
+Package: libc++abi-19-dev-wasm32
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 699
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: all
+Replaces: libc++abi-x.y-dev-wasm32
+Provides: libc++abi-x.y-dev-wasm32
+Depends: wasi-libc
+Conflicts: libc++abi-x.y-dev-wasm32
+Description: LLVM low level support for a standard C++ library (WASI)
+Multi-Arch: foreign
+Homepage: https://www.llvm.org/
+Description-md5: 9a34398f2ed6518894f52de69f57d517
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libc++abi-19-dev-wasm32_19.1.4-1~deb12u1_all.deb
+Size: 197576
+SHA256: d79aafe7172b7b6d6182504665e90f6c9eb1607f0c425f46c29e63b5b2b5d951
+
+Package: libc++abi1-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 296
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: libc++abi-x.y
+Provides: libc++abi-x.y
+Depends: libc6 (>= 2.18), libunwind-19 (>= 1:19.1.4)
+Conflicts: libc++abi-x.y
+Description: LLVM low level support for a standard C++ library
+Multi-Arch: same
+Homepage: https://www.llvm.org/
+Description-md5: 6a197f8a8ae8385e801b369ea97886ce
+Section: libs
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libc++abi1-19_19.1.4-1~deb12u1_amd64.deb
+Size: 104244
+SHA256: e0dbad08410dde8da7ba18e170710c9a712e55d9cbc1d19590dc046295573f55
+
+Package: libclang-19-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 304511
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libstdc++-12-dev, libgcc-12-dev, libobjc-12-dev, libclang1-19 (= 1:19.1.4-1~deb12u1), libclang-common-19-dev (= 1:19.1.4-1~deb12u1)
+Description: Clang library - Development package
+Homepage: https://www.llvm.org/
+Description-md5: ae144ace7105bacb6cceb4728ea7abf2
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libclang-19-dev_19.1.4-1~deb12u1_amd64.deb
+Size: 28252204
+SHA256: d124795d4b49ae80c51e23a84136f5ae88cbe75409306bef2bedffe241d32f13
+
+Package: libclang-common-19-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 13455
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Recommends: libclang-rt-19-dev
+Description: Clang library - Common development package
+Multi-Arch: same
+Homepage: https://www.llvm.org/
+Description-md5: c70051d53e23270c29353f55183e81aa
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libclang-common-19-dev_19.1.4-1~deb12u1_amd64.deb
+Size: 739304
+SHA256: 628066d5748b3e82a6e0063da32f4979675e9ea76081cd52b8874133a34a0f61
+
+Package: libclang-cpp19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 69086
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.0), libllvm19 (= 1:19.1.4-1~deb12u1), libstdc++6 (>= 12)
+Description: C++ interface to the Clang library
+Homepage: https://www.llvm.org/
+Description-md5: 8acc7c5b41666c14f1ef5e79310225e6
+Section: libs
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libclang-cpp19_19.1.4-1~deb12u1_amd64.deb
+Size: 13130288
+SHA256: 6d5edb01bed42d1eb5374a5d66c264b8a5e70d0f5c068dce8abdb4a90fbd7aa1
+
+Package: libclang-cpp19-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 59
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libstdc++-12-dev, libgcc-12-dev, libclang-cpp19 (= 1:19.1.4-1~deb12u1)
+Description: C++ interface to the Clang library
+Homepage: https://www.llvm.org/
+Description-md5: f5afea2f6b71ba0705e995aaab21eef9
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libclang-cpp19-dev_19.1.4-1~deb12u1_amd64.deb
+Size: 44156
+SHA256: 8d290ea628a99eb042f22f6c462bc3e001e5714aed69f390f480db45ca08effb
+
+Package: libclang-rt-19-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 47127
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: lib32stdc++6 (>= 4.1.1), libc6 (>= 2.34), libc6-i386 (>= 2.34), libstdc++6 (>= 4.1.1)
+Description: Compiler-rt - development package
+Multi-Arch: same
+Homepage: https://www.llvm.org/
+Description-md5: 2aaff3e893bfd063ceaf38e310dc3055
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libclang-rt-19-dev_19.1.4-1~deb12u1_amd64.deb
+Size: 3664388
+SHA256: 92c7304f49863362075d74c2e0699683892ae6d39cc686b2a2fe4bda0d7a9a59
+
+Package: libclang-rt-19-dev-wasm32
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 284
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: all
+Description: Compiler-rt - wasm32 builtins
+Multi-Arch: foreign
+Homepage: https://www.llvm.org/
+Description-md5: 0a3a8bf20b284a6b0fb9f63d5541c217
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libclang-rt-19-dev-wasm32_19.1.4-1~deb12u1_all.deb
+Size: 83876
+SHA256: 41e628c9b0a75898519f3c698031fb406868744e7571ceec700fa831ff2eb410
+
+Package: libclang-rt-19-dev-wasm64
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 291
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: all
+Description: Compiler-rt - wasm64 builtins
+Multi-Arch: foreign
+Homepage: https://www.llvm.org/
+Description-md5: f6fba666aadae95050bf103b52358363
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libclang-rt-19-dev-wasm64_19.1.4-1~deb12u1_all.deb
+Size: 84092
+SHA256: 161f131cfa6b9ba0065e2ead1fca63c2eb85c5d01e33b7f1feec5373f85f7c83
+
+Package: libclang1-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 37086
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.0), libllvm19, libstdc++6 (>= 11)
+Description: C interface to the Clang library
+Homepage: https://www.llvm.org/
+Description-md5: 6fbabc5fd121a4ff6b254de59627b6de
+Section: libs
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libclang1-19_19.1.4-1~deb12u1_amd64.deb
+Size: 7597140
+SHA256: 9485c9dfef13d27a6ea99ff6c9258761a3f1ded958d1aba8937a7cc07f5f873e
+
+Package: libclc-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 77661
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: all
+Replaces: libclc-amdgcn, libclc-ptx, libclc-r600, libclc-x.y
+Provides: libclc-x.y
+Depends: libclc-19-dev (= 1:19.1.4-1~deb12u1), libclang-common-19-dev
+Conflicts: libclc-x.y
+Breaks: libclc-amdgcn, libclc-ptx, libclc-r600
+Description: OpenCL C language implementation - platform support
+Multi-Arch: foreign
+Homepage: https://www.llvm.org/
+Description-md5: 73bf1c1e61845108c59b363de4fd901a
+Section: libs
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libclc-19_19.1.4-1~deb12u1_all.deb
+Size: 11397156
+SHA256: 37e3125e1f94b7be086fd437657404e81c7b41f523e75eda164ecbd11cd3860f
+
+Package: libclc-19-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 450
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: all
+Replaces: libclc-dev, libclc-x.y-dev
+Provides: libclc-x.y-dev
+Conflicts: libclc-x.y-dev
+Breaks: libclc-dev
+Description: OpenCL C language implementation - development files
+Multi-Arch: foreign
+Homepage: https://www.llvm.org/
+Description-md5: af42cc63b204a8c47b782398389a6170
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libclc-19-dev_19.1.4-1~deb12u1_all.deb
+Size: 65544
+SHA256: a6db495e2970cc95bf3eccfb38a7c94708a7670b5c4d7dbc3d11cd531c85dd81
+
+Package: libflang-19-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 700693
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libstdc++-12-dev, libgcc-12-dev
+Description: Flang library - Development package
+Homepage: https://www.llvm.org/
+Description-md5: 3328d45b650afee35fe8b6da0b9b1e49
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libflang-19-dev_19.1.4-1~deb12u1_amd64.deb
+Size: 29086104
+SHA256: edfe45e3cdc76e02bce8996d7060d8681c20b03c62fd4bf4cbaf23da1dbb365d
+
+Package: libfuzzer-19-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 888
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: clang-19 (= 1:19.1.4-1~deb12u1)
+Description: Library for coverage-guided fuzz testing
+Homepage: https://www.llvm.org/
+Description-md5: bc55cd127b8dab148b78e61e5e475b8e
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libfuzzer-19-dev_19.1.4-1~deb12u1_amd64.deb
+Size: 196752
+SHA256: f33c7fceb29778f0a55655708a001665859dcb974537598839590625afbe8797
+
+Package: liblld-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 14088
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libllvm19 (= 1:19.1.4-1~deb12u1)
+Description: LLVM-based linker, library
+Homepage: https://www.llvm.org/
+Description-md5: edabea654ba7a6bd671515adc0fffdd2
+Section: libs
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/liblld-19_19.1.4-1~deb12u1_amd64.deb
+Size: 1726096
+SHA256: ed0dc1c6879cfeff565b2908307fca5249453abbed55265b182f37148f919ae2
+
+Package: liblld-19-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 107
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: lld-19 (= 1:19.1.4-1~deb12u1), liblld-19 (= 1:19.1.4-1~deb12u1), libzstd-dev, zlib1g-dev
+Description: LLVM-based linker, header files
+Homepage: https://www.llvm.org/
+Description-md5: d5f91d89aa80d28cd4d98b74563f075b
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/liblld-19-dev_19.1.4-1~deb12u1_amd64.deb
+Size: 54584
+SHA256: b4d922f71bc0704e77019dce24b315c95c65531eb3e3cc6539637575e571bc19
+
+Package: liblldb-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 17471
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libclang-cpp19 (>= 1:19.1.4), libcurl4 (>= 7.16.2), libedit2 (>= 3.1-20140620-0), libgcc-s1 (>= 3.0), libipt2 (>= 2.0), libllvm19 (= 1:19.1.4-1~deb12u1), libncurses6 (>= 6), libpython3.11 (>= 3.11.0), libstdc++6 (>= 12), libtinfo6 (>= 6), libxml2 (>= 2.7.4), zlib1g (>= 1:1.1.4)
+Description: Next generation, high-performance debugger, library
+Homepage: https://www.llvm.org/
+Description-md5: 88542bb8337de28344a74df10ce94f4e
+Section: libs
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/liblldb-19_19.1.4-1~deb12u1_amd64.deb
+Size: 4149876
+SHA256: dda63ee1c5eb7c94d1d595db1de64185dbf4466919102245c169057055da6bc5
+
+Package: liblldb-19-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 3587
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: lldb-19 (= 1:19.1.4-1~deb12u1)
+Description: Next generation, high-performance debugger, header files
+Homepage: https://www.llvm.org/
+Description-md5: 8f3dc7f570ba958d1f7496e3e5195498
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/liblldb-19-dev_19.1.4-1~deb12u1_amd64.deb
+Size: 577128
+SHA256: 4a3e75bf3e1d5676ea3e809ca10b3088b21ac5a38aa4da6065870b5acbd6c15b
+
+Package: libllvm-19-ocaml-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 4021
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: libllvm-x.y-ocaml-dev
+Provides: libllvm-19-ocaml-dev-jojl8, libllvm-x.y-ocaml-dev
+Depends: libbigarray-compat-ocaml-dev-5tnk4, libctypes-ocaml-dev-lxwb2, libintegers-ocaml-dev-ane88, ocaml-4.13.1, llvm-19-dev (= 1:19.1.4-1~deb12u1)
+Suggests: llvm-19-doc
+Conflicts: libllvm-x.y-ocaml-dev
+Description: Modular compiler and toolchain technologies, OCaml bindings
+Homepage: https://www.llvm.org/
+Description-md5: 7727e410aa3baa784cb47a4afb95f4e8
+Section: ocaml
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libllvm-19-ocaml-dev_19.1.4-1~deb12u1_amd64.deb
+Size: 474832
+SHA256: 6f952e7df821140741fc788164cbc478bcda7347f4a53b1c8f82f16bb4ba258c
+
+Package: libllvm19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 126306
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: llvm-19-dev (<< 1:19.1.0~++rc3-1~exp2)
+Depends: libc6 (>= 2.36), libedit2 (>= 2.11-20080614-0), libffi8 (>= 3.4), libgcc-s1 (>= 3.3), libstdc++6 (>= 12), libxml2 (>= 2.7.4), libz3-4 (>= 4.8.12), libzstd1 (>= 1.5.2), zlib1g (>= 1:1.2.0)
+Breaks: llvm-19-dev (<< 1:19.1.0~++rc3-1~exp2)
+Description: Modular compiler and toolchain technologies, runtime library
+Multi-Arch: same
+Homepage: https://www.llvm.org/
+Description-md5: a8854f4edf76a8c14ce34dc209bd1d11
+Section: libs
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libllvm19_19.1.4-1~deb12u1_amd64.deb
+Size: 25937324
+SHA256: 96553cdc824356c8fd7d6ea26331c15296f96f07a13f90fee4fc260b368f87e1
+
+Package: libllvmlibc-19-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 3260
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Description: LLVM C Library - dev package
+Homepage: https://www.llvm.org/
+Description-md5: b678725717171e9f1656f9727ef63f83
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libllvmlibc-19-dev_19.1.4-1~deb12u1_amd64.deb
+Size: 444832
+SHA256: ebd4b17f826f8d6b78605fa0b94898d2347cc52d8b650390017fb553f2a85826
+
+Package: libmlir-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 66131
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: libmlir-x.y
+Provides: libmlir-x.y
+Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.0), libllvm19, libstdc++6 (>= 12)
+Conflicts: libmlir-x.y
+Description: Multi-Level Intermediate Representation library
+Multi-Arch: same
+Homepage: https://www.llvm.org/
+Description-md5: b2671453793175bc5bd7c93d05c96c40
+Section: libs
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libmlir-19_19.1.4-1~deb12u1_amd64.deb
+Size: 10745160
+SHA256: a6fed6c7db1603a96a632a9afc7e02d3e161777e64423d8218b36c7790f976f2
+
+Package: libmlir-19-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 357877
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: libmlir-dev, libmlir-x.y-dev
+Provides: libmlir-x.y-dev
+Depends: libmlir-19 (= 1:19.1.4-1~deb12u1)
+Conflicts: libmlir-x.y-dev
+Breaks: libmlir-dev
+Description: Multi-Level Intermediate Representation library
+Multi-Arch: same
+Homepage: https://www.llvm.org/
+Description-md5: b2671453793175bc5bd7c93d05c96c40
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libmlir-19-dev_19.1.4-1~deb12u1_amd64.deb
+Size: 23252896
+SHA256: 1eb5e72adedbc4fff8e6fc8c0a8207cc394a7c270544a39bb203cdc843732ddd
+
+Package: libomp-19-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 34525
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: libomp-x.y-dev
+Provides: libomp-x.y-dev
+Depends: libomp5-19 (= 1:19.1.4-1~deb12u1), libc6 (>= 2.36), libgcc-s1 (>= 3.3), libllvm19, libpython3.11 (>= 3.11.0), libstdc++6 (>= 11), libz3-4 (>= 4.8.12), libzstd1 (>= 1.5.2), zlib1g (>= 1:1.1.4)
+Suggests: libomp-19-doc
+Conflicts: libomp-x.y-dev
+Breaks: libiomp-dev (<< 3.7-1)
+Description: LLVM OpenMP runtime - dev package
+Homepage: https://www.llvm.org/
+Description-md5: 6f692a0e089a2d4587b533b4f246db62
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libomp-19-dev_19.1.4-1~deb12u1_amd64.deb
+Size: 1193700
+SHA256: 035ea89384ef57928f0c7bbfd7b394278da23b8713760a6feb9d6dcd2574e92f
+
+Package: libomp-19-doc
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 14707
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: all
+Replaces: libiomp-x.y-doc
+Depends: libjs-jquery
+Breaks: libiomp-x.y-doc
+Description: LLVM OpenMP runtime - Documentation
+Multi-Arch: foreign
+Homepage: https://www.llvm.org/
+Description-md5: 55ecafb377674896611f496b3a8a1433
+Section: doc
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libomp-19-doc_19.1.4-1~deb12u1_all.deb
+Size: 1062316
+SHA256: 49e6486216b131c02e636f54a64614180363bb8298ea88b085633b47823694b9
+
+Package: libomp5-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 3288
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: libomp-x.y
+Provides: libomp-x.y
+Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.0), libllvm19, libstdc++6 (>= 11), libz3-4 (>= 4.8.12), libzstd1 (>= 1.5.2), zlib1g (>= 1:1.1.4)
+Conflicts: libomp-x.y
+Description: LLVM OpenMP runtime
+Multi-Arch: same
+Homepage: https://www.llvm.org/
+Description-md5: e28f50eb4beb8e316b69da2c1c0194c3
+Section: devel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libomp5-19_19.1.4-1~deb12u1_amd64.deb
+Size: 640232
+SHA256: 2e4ff597fd1753262a5aa8433201ee68cc19ed2314bd1d7eec8f702c7a8c6ecf
+
+Package: libpolly-19-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 12602
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Description: High-level loop and data-locality optimizer
+Multi-Arch: same
+Homepage: https://www.llvm.org/
+Description-md5: 840a80a0b2b70b4ddca3d4d6f53126e7
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libpolly-19-dev_19.1.4-1~deb12u1_amd64.deb
+Size: 1635644
+SHA256: 8b7bdeffe1406b5a314f6a7149ee1c44e7ec2f0b9509b7ff4423c3758fa90072
+
+Package: libunwind-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 115
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: libunwind-x.y
+Provides: libunwind-x.y
+Depends: libc6 (>= 2.34)
+Conflicts: libunwind-x.y
+Description: production-quality unwinder
+Multi-Arch: same
+Homepage: https://www.llvm.org/
+Description-md5: 70dd0c847cdef69a0ce9c2191d54b77e
+Section: libs
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libunwind-19_19.1.4-1~deb12u1_amd64.deb
+Size: 62640
+SHA256: 4c6d39c735e17a4ecc5bb2393b2962dd2ae4e261578460a62bc8fd2f89b806c3
+
+Package: libunwind-19-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 359
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: libunwind-dev, libunwind-x.y-dev
+Provides: libunwind-dev, libunwind-x.y-dev
+Depends: libunwind-19 (= 1:19.1.4-1~deb12u1)
+Conflicts: libunwind-dev, libunwind-x.y-dev
+Description: production-quality unwinder
+Multi-Arch: same
+Homepage: https://www.llvm.org/
+Description-md5: 70dd0c847cdef69a0ce9c2191d54b77e
+Section: libdevel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/libunwind-19-dev_19.1.4-1~deb12u1_amd64.deb
+Size: 81072
+SHA256: ef70036855d3b45840580bcd254a7852521aaf9e694565105e90130068920f1d
+
+Package: lld-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 5492
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.0), libllvm19 (= 1:19.1.4-1~deb12u1), libstdc++6 (>= 12), libzstd1 (>= 1.5.2), zlib1g (>= 1:1.2.2)
+Description: LLVM-based linker
+Homepage: https://www.llvm.org/
+Description-md5: 39b52f07f105b329dd7852cce89ebb7d
+Section: devel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/lld-19_19.1.4-1~deb12u1_amd64.deb
+Size: 1367228
+SHA256: 8d73e991f319b2a08eb645bbe89a41dd7ce343f9d0e89aef987278af09248632
+
+Package: lldb-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 4311
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libclang-cpp19 (>= 1:19.1.4), libedit2 (>= 3.1-20140620-0), libgcc-s1 (>= 3.0), liblldb-19, libllvm19 (= 1:19.1.4-1~deb12u1), libncurses6 (>= 6), libstdc++6 (>= 12), libtinfo6 (>= 6), libxml2 (>= 2.6.27), zlib1g (>= 1:1.1.4), python3-lldb-19
+Description: Next generation, high-performance debugger
+Homepage: https://www.llvm.org/
+Description-md5: 45d52d0209cd7953d2f2bc4d1a99170f
+Section: devel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/lldb-19_19.1.4-1~deb12u1_amd64.deb
+Size: 1215468
+SHA256: 555495a87048dc78fab855f2f55b6067164705ba1be647c23241c83a423d52ec
+
+Package: llvm-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 73129
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: llvm-19-runtime (= 1:19.1.4-1~deb12u1), llvm-19-linker-tools (= 1:19.1.4-1~deb12u1), libc6 (>= 2.36), libcurl4 (>= 7.16.2), libgcc-s1 (>= 3.3), libllvm19, libpfm4, libstdc++6 (>= 12), libz3-4 (>= 4.8.12), libzstd1 (>= 1.5.2), zlib1g (>= 1:1.2.0)
+Recommends: llvm-19-dev
+Suggests: llvm-19-doc
+Description: Modular compiler and toolchain technologies
+Homepage: https://www.llvm.org/
+Description-md5: 07d463911771b9679a5f0131f40992d4
+Section: devel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/llvm-19_19.1.4-1~deb12u1_amd64.deb
+Size: 16351220
+SHA256: 3ac6e0bbeeb13bb5818c1f7a02725eb761f7356f2b0f798408fb68d3faa5a582
+
+Package: llvm-19-dev
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 345958
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: libllvm19 (<< 1:19.1.0-4)
+Depends: libc6 (>= 2.2.5), libgcc-s1 (>= 3.0), libllvm19 (= 1:19.1.4-1~deb12u1), libstdc++6 (>= 4.1.1), libffi-dev, llvm-19 (= 1:19.1.4-1~deb12u1), libncurses-dev, llvm-19-tools (= 1:19.1.4-1~deb12u1), libclang-cpp19 (= 1:19.1.4-1~deb12u1), libxml2-dev, libz3-dev
+Breaks: libllvm19 (<< 1:19.1.0-4)
+Description: Modular compiler and toolchain technologies, libraries and headers
+Homepage: https://www.llvm.org/
+Description-md5: 29f654aa391c01f742a2023c872d7a49
+Section: devel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/llvm-19-dev_19.1.4-1~deb12u1_amd64.deb
+Size: 43026836
+SHA256: f711c1e18c3bce22c9cdeeaa9bc77b7e68abc7e8a5651928cab3f1216d747fcf
+
+Package: llvm-19-doc
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 56959
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: all
+Depends: libjs-jquery, libjs-underscore
+Description: Modular compiler and toolchain technologies, documentation
+Multi-Arch: foreign
+Homepage: https://www.llvm.org/
+Description-md5: 19896d0a63f9911e3a7a7b85ecfac407
+Section: doc
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/llvm-19-doc_19.1.4-1~deb12u1_all.deb
+Size: 8475348
+SHA256: 8eb4b52b6c14219d9fc5814b3d8bbfdd56f5e7aa8d2ae43307d0cbf02b3188af
+
+Package: llvm-19-examples
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 467
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: all
+Depends: llvm-19-dev (>= 1:19.1.4-1~deb12u1), llvm-19-dev (<< 1:19.1.4-1~deb12u1+c~)
+Description: Modular compiler and toolchain technologies, examples
+Homepage: https://www.llvm.org/
+Description-md5: 61fee537b751bf39ce1ac5bf27ca3806
+Section: doc
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/llvm-19-examples_19.1.4-1~deb12u1_all.deb
+Size: 284680
+SHA256: 04b7c9b28fa9d59b122da6a19f9fdac1500e1283418f028f36fb7f2219f51cff
+
+Package: llvm-19-linker-tools
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 4262
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.0), libllvm19, libstdc++6 (>= 11)
+Description: Modular compiler and toolchain technologies - Plugins
+Homepage: https://www.llvm.org/
+Description-md5: 34d6480db2d150315f7bca6065772d03
+Section: devel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/llvm-19-linker-tools_19.1.4-1~deb12u1_amd64.deb
+Size: 1255556
+SHA256: c7d256c394b2d55baaf9eb8413aa5eba4fbf3c1a7cffeed161c16dcf3310eeaa
+
+Package: llvm-19-runtime
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 1687
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.36), libgcc-s1 (>= 3.3), libllvm19, libstdc++6 (>= 12), libz3-4 (>= 4.8.12), libzstd1 (>= 1.5.2), zlib1g (>= 1:1.1.4)
+Recommends: binfmt-support | systemd
+Description: Modular compiler and toolchain technologies, IR interpreter
+Homepage: https://www.llvm.org/
+Description-md5: a2e425ebfc2fcd56b539f44a28559b4a
+Section: devel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/llvm-19-runtime_19.1.4-1~deb12u1_amd64.deb
+Size: 547620
+SHA256: 5eea9d87a24302f68dabaabf2c68bcb2e71c2ea767f31645763a3c2c6c66dbff
+
+Package: llvm-19-tools
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 2556
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.36), libgcc-s1 (>= 3.3), libstdc++6 (>= 11), libz3-4 (>= 4.8.12), libzstd1 (>= 1.5.2), zlib1g (>= 1:1.1.4), python3, python3-pygments, python3-yaml
+Description: Modular compiler and toolchain technologies, tools
+Homepage: https://www.llvm.org/
+Description-md5: 709eba32627c3c079585c05fc5963fe8
+Section: devel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/llvm-19-tools_19.1.4-1~deb12u1_amd64.deb
+Size: 512048
+SHA256: 9af276dd7070a15324f837222283c1778bbd9227b938b51e6450963b54fa5130
+
+Package: mlir-19-tools
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 305177
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Depends: libc6 (>= 2.36), libgcc-s1 (>= 3.3), libllvm19, libstdc++6 (>= 12), libz3-4 (>= 4.8.12), libzstd1 (>= 1.5.2), zlib1g (>= 1:1.1.4)
+Description: Multi-Level Intermediate Representation tools
+Homepage: https://www.llvm.org/
+Description-md5: d0b5aeb3d29bd335ae224dda484fdc7a
+Section: devel
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/mlir-19-tools_19.1.4-1~deb12u1_amd64.deb
+Size: 50694748
+SHA256: 59b97fd646964ffc7082362dc941b4b44384484a86f4a111191a0f93310a3101
+
+Package: python3-clang-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 181
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: python-clang-x.y
+Provides: python-clang-x.y
+Depends: python3, libclang-19-dev
+Conflicts: python-clang-x.y
+Description: Clang Python Bindings
+Homepage: https://www.llvm.org/
+Description-md5: 2c9b6237594ba364f2afb9b0458f2f14
+Section: python
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/python3-clang-19_19.1.4-1~deb12u1_amd64.deb
+Size: 69652
+SHA256: 78fc4b4fa5bda859b669660b6fa6be89725a25758345ff7937e533527f87f725
+
+Package: python3-lldb-19
+Source: llvm-toolchain-19
+Version: 1:19.1.4-1~deb12u1
+Installed-Size: 929
+Maintainer: LLVM Packaging Team <pkg-llvm-team@lists.alioth.debian.org>
+Architecture: amd64
+Replaces: python3-lldb-x.y
+Provides: python3-lldb-x.y
+Depends: liblldb-19 (= 1:19.1.4-1~deb12u1)
+Conflicts: python3-lldb-x.y
+Description: Next generation, high-performance debugger, python3 lib
+Homepage: https://www.llvm.org/
+Description-md5: 0185ffb3cdaadce7edcc313c1e68ae92
+Section: python
+Priority: optional
+Filename: pool/main/l/llvm-toolchain-19/python3-lldb-19_19.1.4-1~deb12u1_amd64.deb
+Size: 158648
+SHA256: c7380efc2c264979bd447615317bbd419ab1e03d38993990c4e6c6a5eab2e494
+
+Package: tzdata
+Version: 2024b-0+deb12u1
+Installed-Size: 2555
+Maintainer: GNU Libc Maintainers <debian-glibc@lists.debian.org>
+Architecture: all
+Provides: tzdata-bookworm
+Depends: debconf (>= 0.5) | debconf-2.0
+Description: time zone and daylight-saving time data
+Multi-Arch: foreign
+Homepage: https://www.iana.org/time-zones
+Description-md5: a77a3cc9a67658dd7cfdc6547391b8f8
+Tag: role::app-data, use::timekeeping
+Section: localization
+Priority: required
+Filename: pool/main/t/tzdata/tzdata_2024b-0+deb12u1_all.deb
+Size: 297568
+SHA256: 9426e641cdcea0b890fa270930e2577c71ce2085c445e058b08870b2adee554d
+
+Package: xscreensaver
+Version: 6.06+dfsg1-3+deb12u1
+Installed-Size: 1732
+Maintainer: Tormod Volden <debian.tormod@gmail.com>
+Architecture: amd64
+Depends: xscreensaver-data, init-system-helpers (>= 1.52), libatk1.0-0 (>= 1.12.4), libc6 (>= 2.34), libcrypt1 (>= 1:4.1.0), libglib2.0-0 (>= 2.49.3), libgtk-3-0 (>= 3.16.2), libpam0g (>= 0.99.7.1), libsystemd0 (>= 243), libx11-6 (>= 2:1.2.99.901), libxext6, libxft2 (>> 2.1.1), libxi6 (>= 2:1.2.99.4), libxinerama1 (>= 2:1.1.4), libxml2 (>= 2.7.4), libxrandr2 (>= 2:1.2.99.2), libxt6, libxxf86vm1
+Recommends: libjpeg-turbo-progs, miscfiles | wordlist, perl, fonts-urw-base35 | xfonts-100dpi
+Suggests: fortune, gdm3 | kdm-gdmcompat, qcam | streamer, www-browser, xdaliclock, xfishtank, xscreensaver-data-extra, xscreensaver-gl, xscreensaver-gl-extra
+Description: Screensaver daemon and frontend for X11
+Homepage: https://www.jwz.org/xscreensaver/
+Description-md5: f28418049591dc7ea8833c590fe2406a
+Tag: interface::graphical, interface::x11, role::program, scope::application,
+ uitoolkit::gtk, x11::application, x11::screensaver
+Section: x11
+Priority: optional
+Filename: pool/main/x/xscreensaver/xscreensaver_6.06+dfsg1-3+deb12u1_amd64.deb
+Size: 440288
+SHA256: 7f09fd540a92989da1ee34a5c924d999c21394e9956763e0b4b5134674eb4e04
+
+Package: xscreensaver-data
+Source: xscreensaver
+Version: 6.06+dfsg1-3+deb12u1
+Installed-Size: 2353
+Maintainer: Tormod Volden <debian.tormod@gmail.com>
+Architecture: amd64
+Depends: libwww-perl, libc6 (>= 2.34), libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.16.0), libx11-6, libxext6, libxft2 (>> 2.1.1), libxt6
+Suggests: xscreensaver
+Description: Screen saver modules for screensaver frontends
+Homepage: https://www.jwz.org/xscreensaver/
+Description-md5: 536b56342032dfd837382af49582b3ca
+Tag: role::app-data, uitoolkit::gtk, x11::screensaver
+Section: x11
+Priority: optional
+Filename: pool/main/x/xscreensaver/xscreensaver-data_6.06+dfsg1-3+deb12u1_amd64.deb
+Size: 379016
+SHA256: 19cf3217bcd02a489ba8f7759c6533757491410e87a2f0ce423d0745fd187230
+
+Package: xscreensaver-data-extra
+Source: xscreensaver
+Version: 6.06+dfsg1-3+deb12u1
+Installed-Size: 8549
+Maintainer: Tormod Volden <debian.tormod@gmail.com>
+Architecture: amd64
+Depends: dictionaries-common, libjpeg-turbo-progs, netpbm, xscreensaver-data, libc6 (>= 2.34), libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.16.0), libx11-6, libxext6, libxft2 (>> 2.1.1), libxt6
+Description: Extra screen saver modules for screensaver frontends
+Homepage: https://www.jwz.org/xscreensaver/
+Description-md5: e2e30af33c7cede942543fe590347d31
+Tag: interface::graphical, interface::x11, role::app-data, role::program,
+ uitoolkit::gtk, x11::application, x11::screensaver
+Section: x11
+Priority: optional
+Filename: pool/main/x/xscreensaver/xscreensaver-data-extra_6.06+dfsg1-3+deb12u1_amd64.deb
+Size: 1390032
+SHA256: 008e2e3524f99d13ad7854c9b42a7158b0c9dabab19375cc6b695f40e5416285
+
+Package: xscreensaver-gl
+Source: xscreensaver
+Version: 6.06+dfsg1-3+deb12u1
+Installed-Size: 19638
+Maintainer: Tormod Volden <debian.tormod@gmail.com>
+Architecture: amd64
+Depends: libwww-perl, libcap2-bin, libc6 (>= 2.34), libegl1, libgdk-pixbuf-2.0-0 (>= 2.22.0), libgl1, libglib2.0-0 (>= 2.16.0), libglu1-mesa | libglu1, libx11-6, libxext6, libxft2 (>> 2.1.1), libxt6
+Suggests: xscreensaver
+Description: GL(Mesa) screen saver modules for screensaver frontends
+Homepage: https://www.jwz.org/xscreensaver/
+Description-md5: 66869878b1853aa8bc96303f75f6fddb
+Tag: interface::3d, interface::graphical, interface::x11, role::program,
+ scope::application, uitoolkit::gtk, x11::application, x11::screensaver
+Section: x11
+Priority: optional
+Filename: pool/main/x/xscreensaver/xscreensaver-gl_6.06+dfsg1-3+deb12u1_amd64.deb
+Size: 8427948
+SHA256: ada050eafeb1d2ab304e22a9a5a33abb6cb271f9d4cb297579b8dbec84fe4bb6
+
+Package: xscreensaver-gl-extra
+Source: xscreensaver
+Version: 6.06+dfsg1-3+deb12u1
+Installed-Size: 11430
+Maintainer: Tormod Volden <debian.tormod@gmail.com>
+Architecture: amd64
+Depends: xscreensaver-gl, libc6 (>= 2.34), libegl1, libgdk-pixbuf-2.0-0 (>= 2.22.0), libgl1, libgle3 (>= 3.1.0), libglib2.0-0 (>= 2.16.0), libglu1-mesa | libglu1, libx11-6, libxext6, libxft2 (>> 2.1.1), libxt6
+Description: Extra GL(Mesa) screen saver modules for screensaver frontends
+Homepage: https://www.jwz.org/xscreensaver/
+Description-md5: 21a355da6381e7acb7c8bbf7405efa4d
+Tag: hardware::opengl, hardware::video, interface::graphical, interface::x11,
+ role::app-data, role::program, uitoolkit::gtk, x11::application,
+ x11::screensaver
+Section: x11
+Priority: optional
+Filename: pool/main/x/xscreensaver/xscreensaver-gl-extra_6.06+dfsg1-3+deb12u1_amd64.deb
+Size: 4785060
+SHA256: cd992a9ff44b7d21d76bd0abacfcfa49f0a0cdc4b96982b8566ec561cd16dc32
+
+Package: xscreensaver-screensaver-bsod
+Source: xscreensaver
+Version: 6.06+dfsg1-3+deb12u1
+Installed-Size: 456
+Maintainer: Tormod Volden <debian.tormod@gmail.com>
+Architecture: amd64
+Depends: xscreensaver-data, libc6 (>= 2.34), libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.16.0), libx11-6, libxext6, libxft2 (>> 2.1.1), libxt6
+Description: BSOD screen saver module from XScreenSaver
+Homepage: https://www.jwz.org/xscreensaver/
+Description-md5: 5121b9ed12328a3984b2b9690b68a805
+Tag: implemented-in::c, interface::graphical, interface::x11, role::program,
+ uitoolkit::gtk, x11::screensaver
+Section: x11
+Priority: optional
+Filename: pool/main/x/xscreensaver/xscreensaver-screensaver-bsod_6.06+dfsg1-3+deb12u1_amd64.deb
+Size: 233248
+SHA256: 1ab4c3a68a4a6f28ab3042c47e7ce0a861d28316194b1d16bda37d43599603c9
+
+Package: xscreensaver-screensaver-webcollage
+Source: xscreensaver
+Version: 6.06+dfsg1-3+deb12u1
+Installed-Size: 182
+Maintainer: Tormod Volden <debian.tormod@gmail.com>
+Architecture: amd64
+Depends: libwww-perl, xscreensaver-data, libc6 (>= 2.34), libgdk-pixbuf-2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.12.0), libjpeg62-turbo (>= 1.3.1)
+Description: Webcollage screen saver module from XScreenSaver
+Homepage: https://www.jwz.org/xscreensaver/
+Description-md5: 98b8867f7f079391ec91896cc6ea46c5
+Tag: game::toys, interface::graphical, interface::x11, role::program,
+ uitoolkit::gtk, x11::screensaver
+Section: x11
+Priority: optional
+Filename: pool/main/x/xscreensaver/xscreensaver-screensaver-webcollage_6.06+dfsg1-3+deb12u1_amd64.deb
+Size: 48720
+SHA256: 4763416639a29bbb7e88c1d36813f30c699b0a2939c956dc253c08ec00cfe958
+

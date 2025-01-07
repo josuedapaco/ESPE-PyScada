@@ -1,0 +1,13 @@
+prefix=/build/snapcraft-certbot-9f57ccf85eed2b6bf72c375cb8865775/stage/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib/x86_64-linux-gnu
+includedir=${prefix}/include
+
+Name: expat
+Version: 2.6.1
+Description: expat XML parser
+URL: https://libexpat.github.io/
+Libs: -L${libdir} -lexpat
+Libs.private: -lm
+Cflags: -I${includedir}
+Cflags.private: -DXML_STATIC

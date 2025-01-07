@@ -1,0 +1,31 @@
+{
+ "v1": {
+  "datasource": "DataSourceAkamaiLocal",
+  "init": {
+   "errors": [],
+   "finished": 1736262680.927573,
+   "start": 1736262680.815994
+  },
+  "init-local": {
+   "errors": [],
+   "finished": 1736262679.6084993,
+   "start": 1736262679.556977
+  },
+  "modules-config": {
+   "errors": [],
+   "finished": 1736262683.7475939,
+   "start": 1736262683.6967137
+  },
+  "modules-final": {
+   "errors": [],
+   "finished": 1736262684.1009903,
+   "start": 1736262684.0357246
+  },
+  "modules-init": {
+   "errors": [],
+   "finished": null,
+   "start": null
+  },
+  "stage": null
+ }
+}

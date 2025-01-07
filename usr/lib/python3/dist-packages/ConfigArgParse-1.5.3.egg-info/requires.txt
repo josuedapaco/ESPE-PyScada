@@ -1,0 +1,8 @@
+
+[test]
+PyYAML
+mock
+pytest
+
+[yaml]
+PyYAML

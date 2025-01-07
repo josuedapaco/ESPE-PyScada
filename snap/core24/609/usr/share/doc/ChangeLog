@@ -1,0 +1,526 @@
+20/09/2024, commit https://git.launchpad.net/snap-core24/tree/99cc1dc8e7c5a9509e2288179bf1da25a43b7e5f
+
+[ Changes in the core24 snap ]
+
+No detected changes for the core24 snap
+
+[ Changes in primed packages ]
+
+systemd-coredump (255.4-1ubuntu8.4): new primed package
+
+apparmor, libapparmor1:amd64 (built from apparmor) updated from 4.0.1-0ubuntu0.24.04.2 to 4.0.1really4.0.1-0ubuntu0.24.04.3:
+
+  apparmor (4.0.1really4.0.1-0ubuntu0.24.04.3) noble; urgency=medium
+
+    * Revert to version 4.0.1-0ubuntu0.24.04.2 except for the patch
+      that enables the bwrap-userns-restrict profile (LP: #2072811).
+    * New upstream release.
+      (LP: #2064672, LP: #2046844, LP: #2060100, LP: #2056297)
+    * Drop patches which have now been applied upstream
+      - d/p/u/parser-fix-issues-appointed-by-coverity.patch
+      - d/p/u/profiles-add-unconfined-profile-for-tuxedo-control-c.patch
+      - d/p/u/parser-support-uin128_t-key-as-a-pair-of-uint64_t-nu.patch
+      - d/p/u/Minor-improvements-for-MountRule.patch
+    * Add patch to add balena-etcher profile (LP: #2046844)
+      - d/p/u/profiles-add-unconfined-balena-etcher-profile.patch
+    * Add upstream patch to relax mount rules to fix use of virtiofs and
+      other file-system types
+      - d/p/u/mountrule-relaxing-constraints-on-fstype.patch
+    * Refresh
+      - d/p/u/samba-systemd-interaction.patch
+      - d/p/u/parser-add-support-for-prompting.patch
+        - Add condition in policydb serialization to only encode xtable if
+        kernel_supports_permstable32
+    * Fix d/p/u/userns-runtime-disable.patch to work when
+      kernel.apparmor_restrict_unprivileged_userns does not exist by adding
+      -e to sysctl.
+    * d/apparmor-profiles.install
+      - install new profile
+        - unshare-userns-restrict
+        - bwrap-userns-restrict
+    * d/apparmor.install
+      - install new profiles
+        - wike - changed installation from apparmor to apparmor.d
+        - foliate
+        - balena-etcher
+        - transmission
+    * d/control: Remove obsolete lsb-base Depends and swap pkg-config to
+      pkgconf for Build-Depends
+
+   -- Georgia Garcia <georgia.garcia@canonical.com>  Thu, 18 Jul 2024 15:28:46 -0300
+
+  apparmor (4.0.1really4.0.0-beta3-0ubuntu0.1) noble; urgency=medium
+
+    * Due to regression, revert changes in previous update back to a
+      source tree equivalent to 4.0.0-beta3-0ubuntu3 (LP: #2072811).
+    * This drops /etc/apparmor.d/bwrap-userns-restrict, allowing various
+      Flatpak apps to save files again.
+    * d/apparmor.maintscript: rm_conffile on the following in
+      /etc/apparmor.d/ to properly revert conffiles introduced in the
+      update being reverted:
+      - abstractions/transmission-common
+      - balena-etcher
+      - bwrap-userns-restrict
+      - foliate
+      - transmission
+      - wike
+
+   -- Robie Basak <robie.basak@ubuntu.com>  Sun, 14 Jul 2024 22:25:31 +0000
+
+base-files (built from base-files) updated from 13ubuntu10 to 13ubuntu10.1:
+
+  base-files (13ubuntu10.1) noble; urgency=medium
+
+    * /etc/issue{,.net}, /etc/{lsb,os}-release: bump version to 24.04.1
+
+   -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Fri, 23 Aug 2024 16:20:46 +0200
+
+bzip2, libbz2-1.0:amd64 (built from bzip2) updated from 1.0.8-5.1 to 1.0.8-5.1build0.1:
+
+  bzip2 (1.0.8-5.1build0.1) noble-proposed; urgency=medium
+
+    * SRU: LP: #2076340: No-change rebuild to pick up changed build flags
+      on ppc64 and s390x.
+
+   -- Matthias Klose <doko@ubuntu.com>  Fri, 09 Aug 2024 04:33:21 +0200
+
+cloud-init (built from cloud-init) updated from 24.1.3-0ubuntu3.3 to 24.2-0ubuntu1~24.04.2:
+
+  cloud-init (24.2-0ubuntu1~24.04.2) noble; urgency=medium
+
+    * Declare breaks on the python3-minimal version that is affected by the
+      py3clean failure when using alternate character set (LP: #2075337)
+
+   -- Benjamin Drung <bdrung@ubuntu.com>  Wed, 07 Aug 2024 20:54:01 +0200
+
+  cloud-init (24.2-0ubuntu1~24.04.1) noble; urgency=medium
+
+    * d/control: Remove netifaces
+    * d/p/deprecation-version-boundary.patch: Pin deprecation version to 24.1
+    * Upstream snapshot based on 24.2. (LP: #2071762).
+      List of changes from upstream can be found at
+      https://raw.githubusercontent.com/canonical/cloud-init/24.2/ChangeLog
+    * drop all d/p/cpick-* files as they are included in upstream snapshot
+
+   -- Chad Smith <chad.smith@canonical.com>  Wed, 03 Jul 2024 06:02:13 -0600
+
+cryptsetup, cryptsetup-bin, libcryptsetup12:amd64 (built from cryptsetup) updated from 2:2.7.0-1ubuntu4 to 2:2.7.0-1ubuntu4.1:
+
+  cryptsetup (2:2.7.0-1ubuntu4.1) noble; urgency=medium
+
+    * initramfs hook: Combine calls to manual_add_modules (LP: #2065180)
+
+   -- Benjamin Drung <bdrung@ubuntu.com>  Mon, 01 Jul 2024 20:38:08 +0200
+
+dbus, dbus-bin, dbus-daemon, dbus-session-bus-common, dbus-system-bus-common, dbus-user-session, libdbus-1-3:amd64 (built from dbus) updated from 1.14.10-4ubuntu4 to 1.14.10-4ubuntu4.1:
+
+  dbus (1.14.10-4ubuntu4.1) noble-proposed; urgency=medium
+
+    * SRU: LP: #2076340: No-change rebuild to pick up changed build flags
+      on ppc64 and s390x.
+
+   -- Matthias Klose <doko@ubuntu.com>  Fri, 09 Aug 2024 04:33:22 +0200
+
+dpkg (built from dpkg) updated from 1.22.6ubuntu6 to 1.22.6ubuntu6.1:
+
+  dpkg (1.22.6ubuntu6.1) noble-security; urgency=medium
+
+    * SRU:
+      - Disable framepointer on ppc64el. LP: #2064539.
+      - Disable framepointer on s390x, leaving only -mbackchain. LP: #2064538.
+
+   -- Matthias Klose <doko@ubuntu.com>  Wed, 17 Jul 2024 11:09:50 +0200
+
+e2fsprogs, libcom-err2:amd64, libext2fs2t64:amd64, libss2:amd64, logsave (built from e2fsprogs) updated from 1.47.0-2.4~exp1ubuntu4 to 1.47.0-2.4~exp1ubuntu4.1:
+
+  e2fsprogs (1.47.0-2.4~exp1ubuntu4.1) noble; urgency=medium
+
+    * Fix superblock checksum mismatch during resize2fs operations,
+      most notably during online resize of cloud images during boot.
+      Read the superblock with Direct I/O to ensure we get the correct
+      view of the disk. (LP: #2036467)
+      - lp2036467-resize2fs-use-Direct-I-O-when-reading-the-superblock.patch
+
+   -- Matthew Ruffell <matthew.ruffell@canonical.com>  Mon, 29 Apr 2024 11:44:46 +1200
+
+libexpat1:amd64 (built from expat) updated from 2.6.1-2build1 to 2.6.1-2ubuntu0.1:
+
+  expat (2.6.1-2ubuntu0.1) noble-security; urgency=medium
+
+    * SECURITY UPDATE: invalid input length
+      - CVE-2024-45490-*.patch: adds a check to the XML_ParseBuffer function of
+        expat/lib/xmlparse.c to identify and error out if a negative length is
+        provided.
+      - CVE-2024-45490
+    * SECURITY UPDATE: integer overflow
+      - CVE-2024-45491.patch: adds a check to the dtdCopy function of
+        expat/lib/xmlparse.c to detect and prevent an integer overflow.
+      - CVE-2024-45491
+    * SECURITY UPDATE: integer overflow
+      - CVE-2024-45492.patch: adds a check to the nextScaffoldPart function of
+        expat/lib/xmlparse.c to detect and prevent an integer overflow.
+      - CVE-2024-45492
+
+   -- Ian Constantin <ian.constantin@canonical.com>  Tue, 10 Sep 2024 13:17:43 +0300
+
+libc-bin, libc6:amd64, libc6:i386 (built from glibc) updated from 2.39-0ubuntu8.2 to 2.39-0ubuntu8.3:
+
+  glibc (2.39-0ubuntu8.3) noble; urgency=medium
+
+    * Fix framepointer flags for s390x and ppc64el
+      (LP: #2064538, LP: #2064539)
+
+   -- Simon Chopin <schopin@ubuntu.com>  Thu, 08 Aug 2024 16:47:42 +0200
+
+gnutls-bin, libgnutls-dane0t64:amd64, libgnutls30t64:amd64 (built from gnutls28) updated from 3.8.3-1.1ubuntu3.1 to 3.8.3-1.1ubuntu3.2:
+
+  gnutls28 (3.8.3-1.1ubuntu3.2) noble-proposed; urgency=medium
+
+    * SRU: LP: #2076340: No-change rebuild to pick up changed build flags
+      on ppc64 and s390x.
+
+   -- Matthias Klose <doko@ubuntu.com>  Fri, 09 Aug 2024 04:33:21 +0200
+
+libgssapi-krb5-2:amd64, libk5crypto3:amd64, libkrb5-3:amd64, libkrb5support0:amd64 (built from krb5) updated from 1.20.1-6ubuntu2 to 1.20.1-6ubuntu2.1:
+
+  krb5 (1.20.1-6ubuntu2.1) noble-security; urgency=medium
+
+    * SECURITY UPDATE: Invalid token requests
+      - debian/patches/CVE-2024-37370.patch: Fix vulnerabilities in GSS
+      message token handling
+      - CVE-2024-37370
+      - CVE-2024-37371
+
+   -- Bruce Cable <bruce.cable@canonical.com>  Mon, 15 Jul 2024 13:27:45 +1000
+
+libseccomp2:amd64 (built from libseccomp) updated from 2.5.5-1ubuntu3 to 2.5.5-1ubuntu3.1:
+
+  libseccomp (2.5.5-1ubuntu3.1) noble-proposed; urgency=medium
+
+    * SRU: LP: #2076340: No-change rebuild to pick up changed build flags
+      on ppc64 and s390x.
+
+   -- Matthias Klose <doko@ubuntu.com>  Fri, 09 Aug 2024 04:33:21 +0200
+
+libzstd1:amd64 (built from libzstd) updated from 1.5.5+dfsg2-2build1 to 1.5.5+dfsg2-2build1.1:
+
+  libzstd (1.5.5+dfsg2-2build1.1) noble-proposed; urgency=medium
+
+    * SRU: LP: #2076340: No-change rebuild to pick up changed build flags
+      on ppc64 and s390x.
+
+   -- Matthias Klose <doko@ubuntu.com>  Fri, 09 Aug 2024 04:33:22 +0200
+
+dmsetup, libdevmapper1.02.1:amd64 (built from lvm2) updated from 2:1.02.185-3ubuntu3 to 2:1.02.185-3ubuntu3.1:
+
+liblz4-1:amd64 (built from lz4) updated from 1.9.4-1build1 to 1.9.4-1build1.1:
+
+  lz4 (1.9.4-1build1.1) noble-proposed; urgency=medium
+
+    * SRU: LP: #2076340: No-change rebuild to pick up changed build flags
+      on ppc64 and s390x.
+
+   -- Matthias Klose <doko@ubuntu.com>  Fri, 09 Aug 2024 04:33:21 +0200
+
+libnetplan1:amd64, netplan-generator, netplan.io, python3-netplan (built from netplan.io) updated from 1.0-2ubuntu1.2 to 1.0.1-1ubuntu2~24.04.1:
+
+  netplan.io (1.0.1-1ubuntu2~24.04.1) noble; urgency=medium
+
+    * Backport netplan.io 1.0.1-1ubuntu2 to 24.04 (LP: #2074197):
+      - sriov: accept setting the eswitch mode without VFs (LP: 2020409)
+      - cli/sriov: refactoring
+      - tests: use proper 0o600 file permissions in more places
+      - doc: Adding missing 'watchfiles' dependency for Sphinx
+      - doc: Minor fixes in lang. and mark-up in YAML reference
+      - doc: Tutorial reorg & lang. + formatting improvements
+      - networkd: add wait-online enumeration utils
+      - generate: enable systemd-networkd-wait-online for non-optional interfaces
+      - CLI:utils: Do not ask for daemon-reload password interactively
+      - CLI:generate: call daemon-reload after (re-)generating services
+      - wait-online: Do not block on loopback interface
+      - generate: Do not touch wait-online, if we don't have any networkd NetDefs
+      - wait-online: wait for existing interfaces only and downgrade operational
+        state for interfaces without IP configuration
+      - wait-online: account for DHCPv4/v6 addresses
+      - wait-online: do not require virtual devices to be created already
+      - wait-online: recognize that bridge/bond members will never gain
+        link-local addresses
+      - networkd:apply: Drop handling of legacy wpa@ instance units
+      - wait-online: disabled wait-online for stable 1.0
+      - test:integration: Try to improve test flakyness
+      - autopkgtest: More fixes for flaky 'ethernets' test
+      - Increase some test timeouts to account for slow (riscv64) buildds
+      SECURITY UPDATE:
+      - libnetplan: use more restrictive file permissions
+        (Closes: #1072789, LP: 2065738, LP: 1987842)
+      - CVE-2022-4968
+      - libnetplan: escape control characters
+      - backends: escape file paths
+      - backends: escape semicolons in service units (LP: 2066258)
+      Bug fixes:
+      - cli: Fix logging setup when python-rich is not present
+      - CI: fix DebCI case for no-change rebuilds
+      - CI: adopt autopkgtest for 1.0-1 on 22.04
+      - doc: Update README, move CODE_OF_CONDUCT
+      - doc: fix en_GB spelling
+      - CI: adopt snapd.patch for autopkgtest SRU (LP: 2051939)
+      - parse-nm: add a workaround for the DoT DNS option  (LP: 2055148)
+      - CI: Install netplan-ci PPA
+      - parse: don't remove datalist items during iteration
+      - ATTN: parse/bonds: handle same primary in multiple bonds
+      - parse/bonds: don't fail on primary reassignment
+      - cli/sriov: set eswitch regardless of pcidev.vfs
+      - doc: Fix wrong bonds.parameters.mode syntax in example
+      - parse: fix redefinition of gateway(4|6)
+      - doc:tutorial: fix whitespace formatting
+      - util: fix potential NULL pointer assert
+      - python: elements of __all__ must be strings
+      - tests: fix diff test with iproute2 6.8
+      - cli/generate: skip daemon_reload with --mapping
+      - test: cleanup after wait_online test to fix DebCI
+      - CI: fork spread to get !179 fixes
+      - doc: Fix netplan-generate.md formatting !483
+      - emitter: allow unicode characters in the emitter (LP: 2071652)
+      - parse: do not escape all non-ascii bytes
+    * d/t/control: 'diff' autopkgtest is not flaky anymore
+    * d/patches: Drop patches, applied upstream
+    * d/p/0002-CLI-apply-call-udevadm-trigger-using-action-add-Clos.patch:
+      Update 'udevadm trigger' patch, using MOVE action (LP: 2071363)
+    * d/p/0003-Revert-wait-online-disabled-wait-online-for-stable-1.patch:
+      Fix wait-online via s-n-wait-online.service.d/10-netplan.
+    * debian/netplan-generator.postinst: Add a postinst maintainer script to call
+      the generator, so the file permissions fixes will be applied automatically.
+    * d/libnetplan1.symbols:
+      - Update for new internal wait-online symbol
+      - Update for new (private) symbol
+    * d/copyright: Update for 2024
+
+   -- Danilo Egea Gondolfo <danilo.egea.gondolfo@canonical.com>  Wed, 17 Jul 2024 18:12:26 +0100
+
+libhogweed6t64:amd64, libnettle8t64:amd64 (built from nettle) updated from 3.9.1-2.2build1 to 3.9.1-2.2build1.1:
+
+  nettle (3.9.1-2.2build1.1) noble-proposed; urgency=medium
+
+    * SRU: LP: #2076340: No-change rebuild to pick up changed build flags
+      on ppc64 and s390x.
+
+   -- Matthias Klose <doko@ubuntu.com>  Fri, 09 Aug 2024 04:33:22 +0200
+
+openssh-client, openssh-server, openssh-sftp-server (built from openssh) updated from 1:9.6p1-3ubuntu13.4 to 1:9.6p1-3ubuntu13.5:
+
+  openssh (1:9.6p1-3ubuntu13.5) noble-proposed; urgency=medium
+
+    * SRU: LP: #2076340: No-change rebuild to pick up changed build flags
+      on ppc64 and s390x.
+
+   -- Matthias Klose <doko@ubuntu.com>  Fri, 09 Aug 2024 04:33:22 +0200
+
+libssl3t64:amd64, openssl (built from openssl) updated from 3.0.13-0ubuntu3.1 to 3.0.13-0ubuntu3.4:
+
+  openssl (3.0.13-0ubuntu3.4) noble-security; urgency=medium
+
+    * SECURITY UPDATE: Possible denial of service in X.509 name checks
+      - debian/patches/CVE-2024-6119.patch: avoid type errors in EAI-related
+        name check logic in crypto/x509/v3_utl.c, test/*.
+      - CVE-2024-6119
+
+   -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Tue, 20 Aug 2024 13:05:36 -0400
+
+  openssl (3.0.13-0ubuntu3.3) noble-proposed; urgency=medium
+
+    * SRU: LP: #2076340: No-change rebuild to pick up changed build flags
+      on ppc64 and s390x.
+
+   -- Matthias Klose <doko@ubuntu.com>  Fri, 09 Aug 2024 04:33:21 +0200
+
+  openssl (3.0.13-0ubuntu3.2) noble-security; urgency=medium
+
+    * SECURITY UPDATE: unbounded mem growth when processing TLSv1.3 sessions
+      - debian/patches/CVE-2024-2511.patch: fix unconstrained session cache
+        growth in TLSv1.3 in ssl/ssl_lib.c, ssl/ssl_sess.c,
+        ssl/statem/statem_srvr.c.
+      - CVE-2024-2511
+    * SECURITY UPDATE: checking excessively long DSA keys or params very slow
+      - debian/patches/CVE-2024-4603.patch: check DSA parameters for
+        excessive sizes before validating in crypto/dsa/dsa_check.c,
+        test/recipes/15-test_dsaparam_data/invalid/p10240_q256_too_big.pem.
+      - CVE-2024-4603
+    * SECURITY UPDATE: use after free with SSL_free_buffers
+      - debian/patches/CVE-2024-4741.patch: only free the read buffers if
+        we're not using them in ssl/record/rec_layer_s3.c,
+        ssl/record/record.h, ssl/ssl_lib.c.
+      - CVE-2024-4741
+    * SECURITY UPDATE: crash or memory disclosure via SSL_select_next_proto
+      - debian/patches/CVE-2024-5535.patch: validate provided client list in
+        ssl/ssl_lib.c.
+      - CVE-2024-5535
+
+   -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Tue, 30 Jul 2024 11:03:13 -0400
+
+libp11-kit0:amd64, p11-kit, p11-kit-modules:amd64 (built from p11-kit) updated from 0.25.3-4ubuntu2 to 0.25.3-4ubuntu2.1:
+
+  p11-kit (0.25.3-4ubuntu2.1) noble-proposed; urgency=medium
+
+    * SRU: LP: #2076340: No-change rebuild to pick up changed build flags
+      on ppc64 and s390x.
+
+   -- Matthias Klose <doko@ubuntu.com>  Fri, 09 Aug 2024 04:33:21 +0200
+
+libproc2-0:amd64, procps (built from procps) updated from 2:4.0.4-4ubuntu3 to 2:4.0.4-4ubuntu3.1:
+
+  procps (2:4.0.4-4ubuntu3.1) noble; urgency=medium
+
+    * d/sysctl.d/10-bufferbloat.conf: set default qdisc to fq_codel (LP: #2003027)
+
+   -- Heitor Alves de Siqueira <halves@canonical.com>  Wed, 17 Jul 2024 14:59:18 +0000
+
+libpython3-stdlib:amd64, python3, python3-minimal (built from python3-defaults) updated from 3.12.3-0ubuntu1 to 3.12.3-0ubuntu2:
+
+  python3-defaults (3.12.3-0ubuntu2) noble; urgency=medium
+
+    * debpython/files.py: Use LC_ALL=C.UTF-8 when calling dpkg -L to avoid
+      localization issues (LP: #2075337)
+
+   -- Dave Jones <dave.jones@canonical.com>  Wed, 07 Aug 2024 19:44:52 +0200
+
+libpython3.12-minimal:amd64, libpython3.12-stdlib:amd64, python3.12, python3.12-minimal (built from python3.12) updated from 3.12.3-1 to 3.12.3-1ubuntu0.2:
+
+  python3.12 (3.12.3-1ubuntu0.2) noble-security; urgency=medium
+
+    * SECURITY UPDATE: incorrect special character parsing in email module
+      - debian/patches/CVE-2023-27043.patch: reject malformed addresses in
+        Doc/library/email.utils.rst, Lib/email/utils.py,
+        Lib/test/test_email/test_email.py.
+      - CVE-2023-27043
+    * SECURITY UPDATE: ReDoS via specifically-crafted tar archives
+      - debian/patches/CVE-2024-6232.patch: remove backtracking when parsing
+        tarfile headers in Lib/tarfile.py, Lib/test/test_tarfile.py.
+      - CVE-2024-6232
+    * SECURITY UPDATE: header injection via newlines in email module
+      - debian/patches/CVE-2024-6923.patch: encode newlines in headers, and
+        verify headers are sound in Doc/library/email.errors.rst,
+        Doc/library/email.policy.rst, Lib/email/_header_value_parser.py,
+        Lib/email/_policybase.py, Lib/email/errors.py,
+        Lib/email/generator.py, Lib/test/test_email/test_generator.py,
+        Lib/test/test_email/test_policy.py.
+      - CVE-2024-6923
+    * SECURITY UPDATE: resource consumption via cookie parsing
+      - debian/patches/CVE-2024-7592.patch: fix quadratic complexity in
+        parsing quoted cookie values with backslashes in Lib/http/cookies.py,
+        Lib/test/test_http_cookies.py.
+      - CVE-2024-7592
+    * SECURITY UPDATE: infinite loop via crafted zip archive
+      - debian/patches/CVE-2024-8088-1.patch: sanitize names in zipfile.Path
+        in Lib/test/test_zipfile/_path/test_path.py,
+        Lib/zipfile/_path/__init__.py.
+      - debian/patches/CVE-2024-8088-2.patch: replaced SanitizedNames with a
+        more surgical fix in Lib/test/test_zipfile/_path/test_path.py,
+        Lib/zipfile/_path/__init__.py.
+      - CVE-2024-8088
+
+   -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 11 Sep 2024 10:17:37 -0400
+
+  python3.12 (3.12.3-1ubuntu0.1) noble-security; urgency=medium
+
+    * SECURITY UPDATE: is_private and is_global mismatch
+      - debian/patches/CVE-2024-4032.patch: fix "private" (non-global) IP
+        address ranges in Doc/library/ipaddress.rst, Lib/ipaddress.py,
+        Lib/test/test_ipaddress.py.
+      - CVE-2024-4032
+
+   -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 31 Jul 2024 13:43:48 -0400
+
+python3-pkg-resources (built from setuptools) updated from 68.1.2-2ubuntu1 to 68.1.2-2ubuntu1.1:
+
+  setuptools (68.1.2-2ubuntu1.1) noble-security; urgency=medium
+
+    * SECURITY UPDATE: remote code execution via package download functions
+      - debian/patches/CVE-2024-6345.patch: modernize and fix VCS handling
+        to prevent code injection in setuptools/package_index.py and
+        setuptools/tests/test_packageindex.py. Also update setup.cfg to
+        include new test dependencies.
+      - CVE-2024-6345
+
+   -- Vyom Yadav <vyom.yadav@canonical.com>  Tue, 27 Aug 2024 21:44:12 +0530
+
+libpam-systemd:amd64, libsystemd-shared:amd64, libsystemd0:amd64, libudev1:amd64, systemd, systemd-dev, systemd-resolved, systemd-sysv, systemd-timesyncd, udev (built from systemd) updated from 255.4-1ubuntu8.1 to 255.4-1ubuntu8.4:
+
+  systemd (255.4-1ubuntu8.4) noble; urgency=medium
+
+    * No-change rebuild to pick up changed build flags on ppc64el and s390x.
+      (LP: #2076340)
+
+   -- Nick Rosbrook <enr0n@ubuntu.com>  Thu, 08 Aug 2024 10:51:10 -0400
+
+  systemd (255.4-1ubuntu8.3) noble; urgency=medium
+
+    * core/dbus-manager: mark unit file state as outdated only if some changes succeeded
+      (LP: #2055239)
+
+   -- Nick Rosbrook <enr0n@ubuntu.com>  Mon, 05 Aug 2024 14:02:31 -0400
+
+  systemd (255.4-1ubuntu8.2) noble; urgency=medium
+
+    * mountpoint-util: Deal with kernel API breakage in "norecovery" mount option.
+      Also include fixup commit
+      055b465a3f ("shared/mountpoint-util: for old kernels, assume "norecovery" is supported by btrfs").
+      (LP: #2067907)
+    * cgroup-util: allow cg_read_pid() to skip unmapped (zero) pids (LP: #2067922)
+    * debian/extra: ship nice.conf for journald, not logind (LP: #2067927)
+
+   -- Nick Rosbrook <enr0n@ubuntu.com>  Fri, 14 Jun 2024 17:03:19 -0400
+
+bsdutils, fdisk, libblkid1:amd64, libfdisk1:amd64, libmount1:amd64, libsmartcols1:amd64, libuuid1:amd64, mount, rfkill, util-linux (built from util-linux) updated from 1:2.39.3-9ubuntu6 to 1:2.39.3-9ubuntu6.1:
+
+vim-common, vim-tiny (built from vim) updated from 2:9.1.0016-1ubuntu7.1 to 2:9.1.0016-1ubuntu7.2:
+
+  vim (2:9.1.0016-1ubuntu7.2) noble-security; urgency=medium
+
+    * SECURITY UPDATE: use after free
+      - debian/patches/CVE-2024-41957.patch: set tagname to NULL
+        after being freed
+      - CVE-2024-41957
+    * SECURITY UPDATE: use after free
+      - debian/patches/CVE-2024-43374.patch: add lock to keep
+        reference valid
+      - CVE-2024-43374
+
+   -- Bruce Cable <bruce.cable@canonical.com>  Tue, 27 Aug 2024 14:08:09 +1000
+
+wpasupplicant (built from wpa) updated from 2:2.10-21build4 to 2:2.10-21ubuntu0.1:
+
+  wpa (2:2.10-21ubuntu0.1) noble-security; urgency=medium
+
+    * SECURITY UPDATE: loading arbitrary shared objects, privilege escalation
+      - debian/patches/lib_engine_trusted_path.patch: Allow shared objects
+        to only be loaded from /usr/lib, thanks to mdeslaur
+      - CVE-2024-5290
+
+   -- Sudhakar Verma <sudhakar.verma@canonical.com>  Fri, 02 Aug 2024 17:36:25 +0530
+
+xkb-data (built from xkeyboard-config) updated from 2.41-2ubuntu1 to 2.41-2ubuntu1.1:
+
+  xkeyboard-config (2.41-2ubuntu1.1) noble; urgency=medium
+
+    * Added Ergo-L layout and variant (LP: #2069963)
+
+   -- Agathe Porte <agathe.porte@canonical.com>  Fri, 05 Jul 2024 11:01:06 +0200
+
+liblzma5:amd64 (built from xz-utils) updated from 5.6.1+really5.4.5-1 to 5.6.1+really5.4.5-1build0.1:
+
+  xz-utils (5.6.1+really5.4.5-1build0.1) noble-proposed; urgency=medium
+
+    * SRU: LP: #2076340: No-change rebuild to pick up changed build flags
+      on ppc64 and s390x.
+
+   -- Matthias Klose <doko@ubuntu.com>  Fri, 09 Aug 2024 04:33:21 +0200
+
+zlib1g:amd64 (built from zlib) updated from 1:1.3.dfsg-3.1ubuntu2 to 1:1.3.dfsg-3.1ubuntu2.1:
+
+  zlib (1:1.3.dfsg-3.1ubuntu2.1) noble-proposed; urgency=medium
+
+    * SRU: LP: #2076340: No-change rebuild to pick up changed build flags
+      on ppc64 and s390x.
+
+   -- Matthias Klose <doko@ubuntu.com>  Fri, 09 Aug 2024 04:33:20 +0200
+

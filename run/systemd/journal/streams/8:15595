@@ -1,0 +1,9 @@
+# This is private data. Do not parse
+PRIORITY=30
+LEVEL_PREFIX=1
+FORWARD_TO_SYSLOG=0
+FORWARD_TO_KMSG=0
+FORWARD_TO_CONSOLE=0
+STREAM_ID=fb368cd075564ec5a5f77db38fa59cbc
+IDENTIFIER=python3
+UNIT=pyscada.service

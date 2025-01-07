@@ -1,0 +1,42 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Archive: Debian_12
+Codename: Debian_12
+Origin: obs://build.opensuse.org/home:akamai-linux-team/Debian_12
+Label: home:akamai-linux-team
+Architectures: amd64
+Date: Sun Nov 10 10:50:07 2024
+Description: home:akamai-linux-team (Debian_12)
+MD5Sum:
+ c0a0a7287911785c0144220dacf88f45 1471 Packages
+ c8448c5ec1d29a56ab53e9162529cee4 862 Packages.gz
+ a95fd94ae7b2234705826033c80e0493 1878 Sources
+ 970ee6f9cadeb7d763af6851bab51ff2 887 Sources.gz
+SHA1:
+ 39a234f8279a3cb602b3e3c93aaac2216b6a3ff2 1471 Packages
+ 6442a6112cd0dd80d36b92af60392173986a049c 862 Packages.gz
+ bb157070a1bf2713b47996b53b1b128c72687b3d 1878 Sources
+ 0d0226baec4612f8d2be5eca77e1ffa28a10c35b 887 Sources.gz
+SHA256:
+ 7a5a8f8d79e7bd7eea2530761dbbaba98a10c2dd8306fee74e29e13e93015d77 1471 Packages
+ daf540a9431229946daacb0ce6ecad79a8dc3e64f6fa1446c72158c4a1dddb51 862 Packages.gz
+ f6b1cd76a28300c5afe1d96ee5f786acd71d117265f928be27487cf244c502ef 1878 Sources
+ 37b0e2870b96ef266e751de3a0f014be7b657422f5d703ea737c43f91f2934e6 887 Sources.gz
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.0.7 (GNU/Linux)
+
+iQIVAwUBZzCP36x5Zd6pwb6FAQjb0RAAikHjzUnMZBIPwqpYEwaYxtSK0BAPd+YJ
+L1BmW7r+8VVJjQyuHSly8U6esLZbn5FIbnOAKXaXdphxy7N2ne9STrTEUcq/RA1R
+KlUoDla4zVfayvD8V5gZwudaRQz5WPVOj8pkGGQ7msahg0uVMQy7uLxo1vL2gWU7
+W02Frsy/FUxsxjcwg90FDCHk3Ymz0ozkFUiHDgof6wFaIuVuqndcVc+3LJyZOYXG
+9BKhmVb5lRdvtvgkGvpKN/81R8+1ICoHJKbLuPq9F8yoaHbTutba7qGQdXCTnYg+
+sZN08jkQQiHn/wbkImB1iQ1yauA3I/a0dPX29Vs2fKDzXQ645K6SBQV3grpov/oa
+28OUNwJhpshlpgpA+xYxvA9/YAffWnyti7ITWQXUloQn4lHtnTHZY8h/AXUlxZz1
+g3PaMOAQ/UXHsSp3X1Ii0m/I/prhZlE7Sz56vOTqmdKjBtLMBB89KzRHBQwc8xeO
+MeOyLCB/vTcIGf8yhDjxhk4SY8oOurBRofJpQy/2an/rRzR+g2bVVRgr9nz8oSnD
+7uNtPMPm9ZfKkb8XZmh72Qz0gVS5stAm+HVBj+Flg4ZPeO82VRpTlkIhLu5FAVRy
+YctmW+UPSYrVYqKxEYKffA5WplmNQtbWnlgxOllynKzzouBlsSOquZwld8w7ykWg
+4yfesNpsjYs=
+=Ht0K
+-----END PGP SIGNATURE-----

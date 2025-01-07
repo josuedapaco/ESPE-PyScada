@@ -1,0 +1,2 @@
+# debconf is only needed for purge
+certbot binary: no-debconf-config
